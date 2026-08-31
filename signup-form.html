@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign Up</title>
+
+<!-- intl-tel-input CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Courier New', monospace;
+    background: #05070f;
+    color: #f5f6fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: #0d1120;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    font-size: 11px;
+    color: #9aa0b4;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  form { margin-top: 24px; }
+  .field { margin-bottom: 16px; }
+
+  label {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #9aa0b4;
+    margin-bottom: 6px;
+  }
+
+  input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: #05070f;
+    color: #f5f6fa;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s;
+  }
+  input:focus {
+    border-color: #7b5cff;
+    box-shadow: 0 0 0 2px rgba(123,92,255,0.2);
+  }
+  input::placeholder { color: rgba(154,160,180,0.7); }
+
+  .name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  button {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #7b5cff 0%, #5a7dff 100%);
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity 0.2s;
+  }
+  button:hover { opacity: 0.9; }
+  button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .message {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    display: none;
+  }
+  .message.error { display: block; background: rgba(251,44,54,0.1); color: #fb2c36; border: 1px solid rgba(251,44,54,0.2); }
+  .message.success { display: block; background: rgba(5,223,114,0.1); color: #05df72; border: 1px solid rgba(5,223,114,0.2); }
+
+  /* ── intl-tel-input dark theme ── */
+  .iti { width: 100%; }
+  .iti--separate-dial-code .iti__selected-dial-code { color: #9aa0b4 !important; font-size: 13px; font-family: 'Courier New', monospace; font-weight: 600; }
+  .iti__flag-container { z-index: 2; }
+  .iti__country-list {
+    background-color: #000 !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.6) !important;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+  }
+  .iti__country { color: #f5f6fa; }
+  .iti__country:hover,
+  .iti__country.iti__highlight { background-color: rgba(123,92,255,0.18) !important; }
+  .iti__country-name { color: #f5f6fa; }
+  .iti__dial-code { color: #7c829c !important; }
+  .iti__divider { border-bottom-color: rgba(255,255,255,0.08) !important; }
+  .iti__selected-flag {
+    background: transparent !important;
+    border-right: 1px solid rgba(255,255,255,0.08); /* vertical divider: flag+code | number */
+  }
+  .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag { background: rgba(255,255,255,0.06) !important; }
+  .iti__flag + .iti__selected-dial-code { margin-left: 4px; }
+  .iti__arrow { border-top-color: #f5f6fa; }
+
+  /* Country dropdown — search box (intl-tel-input v17 me built-in search nahi hai) */
+  .iti__search { padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .iti__search input {
+    width: 100%; height: 34px; padding: 0 10px;
+    border-radius: 6px; border: 1px solid rgba(255,255,255,0.12);
+    background: #0d1120; color: #f5f6fa;
+    font-family: 'Courier New', monospace; font-size: 12px; outline: none;
+  }
+  .iti__search input:focus { border-color: #7b5cff; box-shadow: 0 0 0 2px rgba(123,92,255,0.2); }
+  .iti__search input::placeholder { color: rgba(154,160,180,0.7); }
+  .iti__no-results { padding: 10px; text-align: center; color: #7c829c; font-size: 12px; }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Create Account</h1>
+    <p class="subtitle">Get started with AI Trader</p>
+
+    <div class="message" id="msg"></div>
+
+    <form id="signupForm">
+      <div class="name-row">
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" id="firstName" placeholder="John" />
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" id="lastName" placeholder="Doe" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="you@example.com" />
+      </div>
+
+      <!-- Phone Number — country code dropdown + flag, number input ke andar -->
+      <div class="field">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" placeholder="301 2345678" />
+      </div>
+
+      <button type="submit" id="submitBtn">Create Account</button>
+    </form>
+  </div>
+
+  <!-- intl-tel-input JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+
+  <script>
+    const phoneInput = document.getElementById('phone');
+    const form = document.getElementById('signupForm');
+    const msg = document.getElementById('msg');
+    const btn = document.getElementById('submitBtn');
+
+    // intl-tel-input — pehle PK set karo (form turant kaam kare), phir IP lookup
+    // country upgrade kare agar detect ho jaye. Race condition se bachne ke liye.
+    const iti = window.intlTelInput(phoneInput, {
+      initialCountry: 'pk',
+      separateDialCode: true, // dial code input ke left side alag dikhega
+    });
+
+    // Input ke andar sample phone number (ghost/placeholder) — country badlne par update hota hai
+    const phoneSamples = {
+      pk: '301 2345678',
+      in: '98765 43210',
+      au: '412 345 678',
+      us: '201 555 0123',
+      gb: '7700 900123',
+      ae: '50 123 4567',
+      sa: '55 123 4567',
+      ng: '701 234 5678',
+      bd: '1712 345678',
+    };
+    const setPhonePlaceholder = (code) => {
+      phoneInput.placeholder = phoneSamples[code] || 'Enter your Phone Number';
+    };
+    setPhonePlaceholder('pk');
+    phoneInput.addEventListener('countrychange', () => {
+      setPhonePlaceholder(iti.getSelectedCountryData().iso2);
+    });
+
+    // Country dropdown ke andar search box (intl-tel-input v17 me built-in search nahi hai)
+    const countryList = document.querySelector('.iti__country-list');
+    const searchLi = document.createElement('li');
+    searchLi.className = 'iti__search';
+    searchLi.innerHTML = '<input type="search" placeholder="Search country..." aria-label="Search countries" />';
+    countryList.prepend(searchLi);
+    const countrySearch = searchLi.querySelector('input');
+
+    const filterCountries = () => {
+      const q = countrySearch.value.trim().toLowerCase();
+      const rows = countryList.querySelectorAll('.iti__country');
+      rows.forEach((row) => {
+        row.style.display = !q || row.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+      // Searching ke doran preferred section + divider chhupao
+      const divider = countryList.querySelector('.iti__divider');
+      const preferred = countryList.querySelectorAll('.iti__preferred');
+      if (divider) divider.style.display = q ? 'none' : '';
+      preferred.forEach((p) => { p.style.display = q ? 'none' : ''; });
+      let noRes = countryList.querySelector('.iti__no-results');
+      const visible = [...rows].filter((r) => r.style.display !== 'none').length;
+      if (q && !visible) {
+        if (!noRes) {
+          noRes = document.createElement('li');
+          noRes.className = 'iti__no-results';
+          noRes.textContent = 'No results found';
+          countryList.appendChild(noRes);
+        }
+      } else if (noRes) {
+        noRes.remove();
+      }
+    };
+    countrySearch.addEventListener('input', filterCountries);
+    // Har baar dropdown khulne par search reset karo
+    phoneInput.addEventListener('open:dropdown', () => {
+      countrySearch.value = '';
+      filterCountries();
+    });
+
+    // IP se country detect karo, warna PK hi rahega
+    fetch('https://ipinfo.io/json?token=5a8c00f1abba8d')
+      .then((r) => r.json())
+      .then((data) => {
+        const code = (data.country || '').toLowerCase();
+        if (/^[a-z]{2}$/.test(code)) iti.setCountry(code);
+      })
+      .catch(() => { /* IP detect na ho to PK default */ });
+
+    // Phone input me sirf numbers (max 13 digits)
+    phoneInput.addEventListener('input', function () {
+      this.value = this.value.replace(/[^0-9]/g, '').slice(0, 13);
+    });
+
+    const show = (text, kind) => {
+      msg.textContent = text;
+      msg.className = 'message ' + kind;
+    };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = iti ? iti.getNumber() : phoneInput.value.trim(); // POORA number country code ke sath, e.g. +923001234567
+
+      if (!firstName || !lastName || !email || !phone) {
+        show('Please fill in all fields.', 'error');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        show('Please enter a valid email address.', 'error');
+        return;
+      }
+      if (phone.replace(/\D/g, '').length < 6) {
+        show('Please enter a valid phone number.', 'error');
+        return;
+      }
+
+      show('✓ Form ready — checking values...', 'success');
+
+      // Yahi par apna backend/endpoint lagaoge — abhi sirf console.log
+      console.log({
+        firstName,
+        lastName,
+        email,
+        phone, // example: +923001234567
+        offerName: 'Ai-Trader-Site',
+      });
+
+      btn.textContent = '✓ Done';
+      setTimeout(() => { btn.textContent = 'Create Account'; msg.className = 'message'; }, 2500);
+    });
+  </script>
+</body>
+</html>
