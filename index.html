@@ -12,14 +12,22 @@
     <link rel="preconnect" href="https://flagcdn.com" crossorigin />
     <link rel="dns-prefetch" href="https://flagcdn.com" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-69HFHMCL7G"></script>
+    <!-- Google tag (gtag.js) — loaded only AFTER the page finishes rendering,
+         so analytics never competes with first paint / LCP. The first
+         page_view still fires ~2s after load. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-69HFHMCL7G');
+      function loadGtag() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-69HFHMCL7G';
+        document.head.appendChild(s);
+        gtag('config', 'G-69HFHMCL7G');
+      }
+      if (document.readyState === 'complete') setTimeout(loadGtag, 2000);
+      else window.addEventListener('load', function () { setTimeout(loadGtag, 2000); }, { once: true });
     </script>
 
     <!-- Primary metadata (homepage defaults; <Seo/> updates per route) -->
