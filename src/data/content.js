@@ -4,11 +4,11 @@
 
 export const nav = [
   { label: 'Home', href: '#top' },
-  { label: 'About Us', href: '#/about' },
+  { label: 'About Us', href: '/about' },
   { label: 'How It Works', href: '#how' },
   { label: 'Why Invest', href: '#priorities' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#/contact' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export const hero = {
@@ -234,16 +234,16 @@ export const footer = {
   blurb: 'Zephgain is an AI-driven automated trading platform built for users in Australia — automated strategies, real-time market insights, and reliable security solutions.',
   company: [
     { label: 'Home', href: '#top' },
-    { label: 'About Us', href: '#/about' },
+    { label: 'About Us', href: '/about' },
     { label: 'How It Works', href: '#how' },
     { label: 'Why Invest', href: '#priorities' },
     { label: 'FAQ', href: '#faq' },
-    { label: 'Contact Us', href: '#/contact' },
+    { label: 'Contact Us', href: '/contact' },
   ],
   legal: [
-    { label: 'Term Of Use', href: '#/terms' },
-    { label: 'Privacy Policy', href: '#/privacy' },
-    { label: 'Risk Disclosure', href: '#/disclosure' },
+    { label: 'Term Of Use', href: '/terms' },
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Risk Disclosure', href: '/disclosure' },
     { label: 'Sign Up', href: '#register' },
   ],
   disclaimer:

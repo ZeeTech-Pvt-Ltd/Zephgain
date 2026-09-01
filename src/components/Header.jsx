@@ -9,11 +9,10 @@ export default function Header({ route = 'home' }) {
   const ids = useMemo(() => ['top', 'how', 'experience', 'priorities', 'faq', 'contact'], [])
   const active = useScrollSpy(ids)
 
-  // On the About page the home sections don't exist, so "About Us" is active
-  // and the anchor-based links are not.
+  // Route links (/about, /contact…) are active on their own page; home
+  // section anchors (#how, #faq…) are active via scroll-spy on the home page.
   const isActive = (item) => {
-    if (item.href === '#/about') return route === 'about'
-    if (item.href === '#/contact') return route === 'contact'
+    if (item.href.startsWith('/')) return route === item.href.slice(1)
     return route === 'home' && active === item.href.slice(1)
   }
 

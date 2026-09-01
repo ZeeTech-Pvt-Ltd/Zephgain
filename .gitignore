@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Temp verification scripts / scratch
+.arttmp/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
