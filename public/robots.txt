@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Post-registration confirmation page — no indexing value
+Disallow: /thank-you
+
+Sitemap: https://zephgain-au.com/sitemap.xml

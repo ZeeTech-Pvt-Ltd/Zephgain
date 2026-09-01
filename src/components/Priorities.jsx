@@ -1,13 +1,21 @@
 import { Check } from './icons.jsx'
 import { priorities } from '../data/content.js'
 
-export default function Priorities() {
+// `asPage` is set when this section renders as the full /why-invest page:
+// the heading becomes the page's single H1 and targets the page's search
+// intent ("Why Invest with Zephgain") instead of the in-page section title.
+export default function Priorities({ asPage = false }) {
+  const Heading = asPage ? 'h1' : 'h2'
   return (
     <section className="section prio" id="priorities">
       <div className="container">
         <div className="section-head reveal">
           <span className="eyebrow">{priorities.eyebrow}</span>
-          <h2 className="h2">{priorities.title}<mark>{priorities.titleMark}</mark></h2>
+          {asPage ? (
+            <Heading className="h2">Why Invest with <mark>Zephgain</mark></Heading>
+          ) : (
+            <Heading className="h2">{priorities.title}<mark>{priorities.titleMark}</mark></Heading>
+          )}
           <p className="lead">{priorities.lead}</p>
         </div>
 

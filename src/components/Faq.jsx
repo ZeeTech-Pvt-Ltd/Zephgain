@@ -34,12 +34,21 @@ export default function Faq() {
         <div className="faq">
           {faq.map((item, i) => (
             <div className={`faq-item ${openIndex === i ? 'open' : ''} reveal`} key={item.q}>
-              <button className="faq-q" onClick={() => toggle(i)} aria-expanded={openIndex === i}>
+              <button
+                className="faq-q"
+                onClick={() => toggle(i)}
+                aria-expanded={openIndex === i}
+                aria-controls={`faq-answer-${i}`}
+                id={`faq-question-${i}`}
+              >
                 {item.q}
                 <span className="chev"><ChevronDown /></span>
               </button>
               <div
                 className="faq-a"
+                id={`faq-answer-${i}`}
+                role="region"
+                aria-labelledby={`faq-question-${i}`}
                 ref={(el) => (answerRefs.current[i] = el)}
               >
                 <p>{item.a}</p>

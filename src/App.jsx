@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import useReveal from './hooks/useReveal.js'
+import Seo from './components/Seo.jsx'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Metrics from './components/Metrics.jsx'
@@ -109,143 +110,48 @@ export default function App() {
     return () => document.removeEventListener('click', onClick)
   }, [route])
 
-  if (route === 'about') {
-    return (
-      <>
-        <Header route="about" />
-        <main>
-          <About />
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
-  if (route === 'contact') {
-    return (
-      <>
-        <Header route="contact" />
-        <main>
-          <Contact />
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
-  if (route === 'terms') {
-    return (
-      <>
-        <Header route="terms" />
-        <main>
-          <Terms />
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
-  if (route === 'privacy') {
-    return (
-      <>
-        <Header route="privacy" />
-        <main>
-          <Privacy />
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
-  if (route === 'disclosure') {
-    return (
-      <>
-        <Header route="disclosure" />
-        <main>
-          <RiskDisclosure />
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
-  if (route === 'thank-you') {
-    return (
-      <>
-        <Header route="thank-you" />
-        <main>
-          <ThankYou />
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
-  if (route === 'How-It-Works') {
-    return (
-      <>
-        <Header route="How-It-Works" />
-        <main>
-          <HowItWorks />
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
-  if (route === 'why-invest') {
-    return (
-      <>
-        <Header route="why-invest" />
-        <main>
-          <Priorities />
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
-  // Unknown path -> 404 page
-  if (route === '404') {
-    return (
-      <>
-        <Header route="404" />
-        <main>
-          <NotFound />
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
-  return (
+  // Shared page shell — SEO head metadata, header, main, footer.
+  const Layout = ({ routeName, children }) => (
     <>
-      <Header />
-
-      <main>
-        <Hero />
-        <Metrics />
-        <HowItWorks />
-        <Experience />
-        <Priorities />
-        <Features />
-        <Precision />
-
-        <CtaBanner
-          eyebrow="Driven by Innovation"
-          title="Built for Every Trader"
-          text="Zephgain is built by a team of innovators, analysts, and engineers who are committed to advancing the world of automated trading. Join thousands of verified traders across Australia today."
-          cta="Register Now"
-        />
-
-        <Testimonials />
-        <Portfolio />
-        <Faq />
-        <Capabilities />
-        <FinalCta />
-      </main>
-
+      <Seo route={routeName} />
+      <Header route={routeName} />
+      <main>{children}</main>
       <Footer />
     </>
+  )
+
+  if (route === 'about') return <Layout routeName="about"><About /></Layout>
+  if (route === 'contact') return <Layout routeName="contact"><Contact /></Layout>
+  if (route === 'terms') return <Layout routeName="terms"><Terms /></Layout>
+  if (route === 'privacy') return <Layout routeName="privacy"><Privacy /></Layout>
+  if (route === 'disclosure') return <Layout routeName="disclosure"><RiskDisclosure /></Layout>
+  if (route === 'thank-you') return <Layout routeName="thank-you"><ThankYou /></Layout>
+  if (route === 'How-It-Works') return <Layout routeName="How-It-Works"><HowItWorks asPage /></Layout>
+  if (route === 'why-invest') return <Layout routeName="why-invest"><Priorities asPage /></Layout>
+  if (route === '404') return <Layout routeName="404"><NotFound /></Layout>
+
+  return (
+    <Layout routeName="home">
+      <Hero />
+      <Metrics />
+      <HowItWorks />
+      <Experience />
+      <Priorities />
+      <Features />
+      <Precision />
+
+      <CtaBanner
+        eyebrow="Driven by Innovation"
+        title="Built for Every Trader"
+        text="Zephgain is built by a team of innovators, analysts, and engineers who are committed to advancing the world of automated trading. Join thousands of verified traders across Australia today."
+        cta="Register Now"
+      />
+
+      <Testimonials />
+      <Portfolio />
+      <Faq />
+      <Capabilities />
+      <FinalCta />
+    </Layout>
   )
 }
