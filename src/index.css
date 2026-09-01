@@ -938,6 +938,39 @@ body.menu-open { overflow: hidden; }
 .nf-cta { margin-top: 26px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 @media (max-width: 640px) { .nf { padding: 64px 0; } }
 
+/* ---------- Thank You page ---------- */
+.ty-hero { background: linear-gradient(180deg, var(--primary-lighter) 0%, #fff 100%); padding: 96px 0 72px; }
+.ty-inner { text-align: center; max-width: 760px; }
+.ty-badge {
+  width: 74px; height: 74px; margin: 0 auto 22px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--green); color: #fff;
+  box-shadow: 0 14px 30px -10px rgba(86, 126, 62, .55);
+  animation: ty-pop .5s ease;
+}
+@keyframes ty-pop { from { transform: scale(.4); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+.ty-inner h1 { margin: 16px 0 16px; }
+.ty-inner .lead { max-width: 560px; margin-inline: auto; }
+.ty-actions { margin-top: 28px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.ty-next {
+  margin: 48px auto 0; max-width: 560px; text-align: left;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md); padding: 28px 30px;
+}
+.ty-next h3 { font-size: 18px; text-align: center; margin-bottom: 20px; }
+.ty-steps { display: grid; gap: 18px; }
+.ty-step { display: flex; gap: 14px; align-items: flex-start; }
+.ty-step > span {
+  width: 30px; height: 30px; flex: 0 0 auto; border-radius: 50%;
+  display: grid; place-items: center; background: var(--primary-lighter); color: var(--primary-dark);
+  font-size: 13px; font-weight: 700;
+}
+.ty-step h4 { font-size: 14.5px; font-weight: 700; margin-bottom: 2px; }
+.ty-step p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+@media (max-width: 640px) {
+  .ty-hero { padding: 56px 0 48px; }
+  .ty-next { padding: 22px 18px; margin-top: 36px; }
+}
+
 /* ---------- Legal pages (Terms of Use + Privacy Policy share these styles) ---------- */
 .terms-hero { background: linear-gradient(180deg, var(--primary-lighter) 0%, #fff 100%); padding: 84px 0 56px; }
 .terms-hero-inner { text-align: center; max-width: 780px; }

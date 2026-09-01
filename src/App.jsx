@@ -21,10 +21,11 @@ import Terms from './components/Terms.jsx'
 import Privacy from './components/Privacy.jsx'
 import RiskDisclosure from './components/RiskDisclosure.jsx'
 import NotFound from './components/NotFound.jsx'
+import ThankYou from './components/ThankYou.jsx'
 
 // Clean-path routing: "/" -> home, "/about" -> About, anything unknown -> 404.
 // Fragment anchors like "#register" keep working as in-page scroll links.
-const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure']
+const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you']
 
 const getRoute = (path = location.pathname) => {
   const clean = path.split('?')[0].replace(/\/+$/, '')
@@ -162,6 +163,18 @@ export default function App() {
         <Header route="disclosure" />
         <main>
           <RiskDisclosure />
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
+  if (route === 'thank-you') {
+    return (
+      <>
+        <Header route="thank-you" />
+        <main>
+          <ThankYou />
         </main>
         <Footer />
       </>

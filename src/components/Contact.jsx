@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import CtaBanner from './CtaBanner.jsx'
 import PhoneNumberInput from './PhoneNumberInput.jsx'
-import { Check, ArrowRight, Icon } from './icons.jsx'
+import { ArrowRight, Icon } from './icons.jsx'
+import { submitLead } from '../lib/submitLead.js'
+import { navigateTo } from '../lib/navigate.js'
+import { countries } from '../data/countries.js'
 
 // Layout follows the lyravestgrove contact reference; colors, fonts, and
 // components are Zephgain's own design system. Content is Zephgain-branded.
@@ -13,13 +16,35 @@ const info = [
 ]
 
 export default function Contact() {
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | sending | err
+  const [errMsg, setErrMsg] = useState('')
   const [phone, setPhone] = useState('')
   const [country, setCountry] = useState('AU')
+  const dial = countries.find((c) => c[0] === country)?.[2] ?? 61
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
+    const data = new FormData(e.target)
+    const firstName = String(data.get('firstName') ?? '').trim()
+    const lastName = String(data.get('lastName') ?? '').trim()
+    const email = String(data.get('email') ?? '').trim()
+    if (!firstName || !lastName || !email || !phone) return
+    setStatus('sending')
+    setErrMsg('')
+    try {
+      // Send the full international number, e.g. +61 + 0400 000 000 -> 61400000000
+      const digits = phone.replace(/[^\d]/g, '')
+      const fullPhone = digits.startsWith(String(dial)) ? digits : `${dial}${digits}`
+      const res = await submitLead({ firstName, lastName, email, phone: fullPhone })
+      if (res?.status === 'success') navigateTo('/thank-you')
+      else {
+        setStatus('err')
+        setErrMsg(res?.message || 'Something went wrong. Please try again.')
+      }
+    } catch {
+      setStatus('err')
+      setErrMsg('Something went wrong. Please try again.')
+    }
   }
 
   return (
@@ -66,14 +91,7 @@ export default function Contact() {
             <h3>Register your interest</h3>
             <p className="ct-form-sub">Fill in your details and our team will be in touch to get you started.</p>
 
-            {sent ? (
-              <div className="ct-success">
-                <span className="ct-success-ico"><Check size={22} /></span>
-                <h4>Thanks for reaching out</h4>
-                <p>Your message has been received. Our team will get back to you within a few hours.</p>
-              </div>
-            ) : (
-              <form className="ct-form" onSubmit={onSubmit}>
+            <form className="ct-form" onSubmit={onSubmit}>
                 <div className="ct-row">
                   <div className="ct-field">
                     <label htmlFor="ct-first">First Name *</label>
@@ -104,11 +122,12 @@ export default function Contact() {
                   />
                 </div>
 
-                <button className="btn btn-primary" type="submit">
-                  Register Now <ArrowRight size={16} />
+                {errMsg && <div className="form-message err">{errMsg}</div>}
+
+                <button className="btn btn-primary" type="submit" disabled={status === 'sending'}>
+                  {status === 'sending' ? 'Sending…' : <>Register Now <ArrowRight size={16} /></>}
                 </button>
               </form>
-            )}
           </div>
         </div>
       </section>

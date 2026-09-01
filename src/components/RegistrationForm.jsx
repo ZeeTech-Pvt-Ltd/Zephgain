@@ -3,6 +3,8 @@ import { ArrowRight } from './icons.jsx'
 import { Visa, Mastercard, PayPal, GooglePay, BankTransfer } from './PayLogos.jsx'
 import PhoneNumberInput from './PhoneNumberInput.jsx'
 import { countries } from '../data/countries.js'
+import { submitLead } from '../lib/submitLead.js'
+import { navigateTo } from '../lib/navigate.js'
 
 // Validation rules — kept identical to the reference site
 const nameRe = /^(?!.*(?:tg|telegram|traffic|bot))[^@\d]{2,20}$/i
@@ -56,7 +58,7 @@ export default function RegistrationForm() {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const data = new FormData(e.target)
     const nextErrors = {}
@@ -67,16 +69,26 @@ export default function RegistrationForm() {
     setMessage({ kind: '', text: '' })
     if (Object.keys(nextErrors).length) return
     setProcessing(true)
-    /* NOTE: Static demo build. To receive real leads, point the form action to your backend endpoint
-       and POST id, first_name, last_name, email, phone, phone_code, country. */
-    setTimeout(() => {
+    try {
+      // Send the full international number, e.g. +61 + 0412 345 678 -> 61412345678
+      const digits = phone.replace(/[^\d]/g, '')
+      const fullPhone = digits.startsWith(String(dial)) ? digits : `${dial}${digits}`
+      const res = await submitLead({
+        firstName: String(data.get('first_name') ?? '').trim(),
+        lastName: String(data.get('last_name') ?? '').trim(),
+        email: String(data.get('email') ?? '').trim(),
+        phone: fullPhone,
+      })
+      if (res?.status === 'success') {
+        navigateTo('/thank-you')
+      } else {
+        setMessage({ kind: 'err', text: res?.message || 'Something went wrong. Please try again.' })
+      }
+    } catch {
+      setMessage({ kind: 'err', text: 'Something went wrong. Please try again.' })
+    } finally {
       setProcessing(false)
-      setMessage({ kind: 'ok', text: 'Registration completed — You will be contacted shortly by our representative.' })
-      formRef.current.reset()
-      setCountry('AU')
-      setPhone('')
-      setTimeout(() => setMessage({ kind: '', text: '' }), 7000)
-    }, 1100)
+    }
   }
 
   const renderField = (name) => {
