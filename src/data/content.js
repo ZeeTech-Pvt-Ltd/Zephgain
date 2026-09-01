@@ -5,7 +5,7 @@
 export const nav = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  { label: 'How It Works', href: '/How-It-Works' },
+  { label: 'How It Works', href: '/how-it-works' },
   { label: 'Why Invest', href: '/why-invest' },
   { label: 'FAQ', href: '/', scroll: '#faq' },
   { label: 'Contact', href: '/contact' },
@@ -235,7 +235,7 @@ export const footer = {
   company: [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
-    { label: 'How It Works', href: '/How-It-Works' },
+    { label: 'How It Works', href: '/how-it-works' },
     { label: 'Why Invest', href: '/why-invest' },
     { label: 'FAQ', href: '/', scroll: '#faq' },
     { label: 'Contact Us', href: '/contact' },

@@ -118,18 +118,18 @@ export const seo = {
     ],
   },
 
-  'How-It-Works': {
+  'how-it-works': {
     title: 'How Zephgain Works — Get Started in 3 Easy Steps',
     description:
       'Getting started with Zephgain takes about two minutes. Create your account, deposit from just $250, and let the AI trade around the clock — no hidden fees.',
     keywords: 'how to start automated trading, Zephgain sign up, AI trading steps, automated trading for beginners',
-    canonical: `${SITE}/How-It-Works`,
+    canonical: `${SITE}/how-it-works`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
     ogImageAlt: 'How Zephgain works — create your account, deposit, and start automated trading',
     schema: [
-      webPage('How Zephgain Works', `${SITE}/How-It-Works`, 'How to get started with Zephgain automated trading in three easy steps — create an account, deposit, and start trading.'),
-      breadcrumb('How It Works', '/How-It-Works'),
+      webPage('How Zephgain Works', `${SITE}/how-it-works`, 'How to get started with Zephgain automated trading in three easy steps — create an account, deposit, and start trading.'),
+      breadcrumb('How It Works', '/how-it-works'),
     ],
   },
 

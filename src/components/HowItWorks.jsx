@@ -1,7 +1,7 @@
 import { Icon, Check, ArrowRight } from './icons.jsx'
 import { steps, trustStrip } from '../data/content.js'
 
-// `asPage` is set when this section renders as the full /How-It-Works page,
+// `asPage` is set when this section renders as the full /how-it-works page,
 // so its heading becomes the page's single H1 (styling stays identical).
 export default function HowItWorks({ asPage = false }) {
   const Heading = asPage ? 'h1' : 'h2'

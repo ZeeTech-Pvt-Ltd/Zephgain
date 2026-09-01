@@ -26,12 +26,16 @@ import ThankYou from './components/ThankYou.jsx'
 
 // Clean-path routing: "/" -> home, "/about" -> About, anything unknown -> 404.
 // Fragment anchors like "#register" keep working as in-page scroll links.
-const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you', 'How-It-Works', 'why-invest']
+const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you', 'how-it-works', 'why-invest']
+
+// Legacy case-variant paths redirect to their canonical lowercase form
+// (the page used to live at /How-It-Works).
+const LEGACY_PATHS = { '/How-It-Works': '/how-it-works' }
 
 const getRoute = (path = location.pathname) => {
   const clean = path.split('?')[0].replace(/\/+$/, '')
   if (!clean || clean === '/') return 'home'
-  const first = clean.slice(1)
+  const first = LEGACY_PATHS[clean] ? LEGACY_PATHS[clean].slice(1) : clean.slice(1)
   return KNOWN_ROUTES.includes(first) ? first : '404'
 }
 
@@ -45,6 +49,16 @@ export default function App() {
     if (h.startsWith('#/')) {
       const p = h.slice(2).split('?')[0]
       history.replaceState(null, '', p || '/')
+      setRoute(getRoute())
+    }
+  }, [])
+
+  // Legacy case-variant paths (e.g. /How-It-Works) rewrite to lowercase in the URL bar.
+  useEffect(() => {
+    const clean = location.pathname.replace(/\/+$/, '')
+    const target = LEGACY_PATHS[clean]
+    if (target) {
+      history.replaceState(null, '', target)
       setRoute(getRoute())
     }
   }, [])
@@ -147,7 +161,7 @@ export default function App() {
   if (route === 'privacy') return <Layout routeName="privacy"><Privacy /></Layout>
   if (route === 'disclosure') return <Layout routeName="disclosure"><RiskDisclosure /></Layout>
   if (route === 'thank-you') return <Layout routeName="thank-you"><ThankYou /></Layout>
-  if (route === 'How-It-Works') return <Layout routeName="How-It-Works"><HowItWorks asPage /></Layout>
+  if (route === 'how-it-works') return <Layout routeName="how-it-works"><HowItWorks asPage /></Layout>
   if (route === 'why-invest') return <Layout routeName="why-invest"><Priorities asPage /></Layout>
   if (route === '404') return <Layout routeName="404"><NotFound /></Layout>
 
