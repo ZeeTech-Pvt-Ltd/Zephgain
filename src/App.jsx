@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import useReveal from './hooks/useReveal.js'
 import Seo from './components/Seo.jsx'
 import Header from './components/Header.jsx'
@@ -16,13 +16,18 @@ import Faq from './components/Faq.jsx'
 import Capabilities from './components/Capabilities.jsx'
 import FinalCta from './components/FinalCta.jsx'
 import Footer from './components/Footer.jsx'
-import About from './components/About.jsx'
-import Contact from './components/Contact.jsx'
-import Terms from './components/Terms.jsx'
-import Privacy from './components/Privacy.jsx'
-import RiskDisclosure from './components/RiskDisclosure.jsx'
-import NotFound from './components/NotFound.jsx'
-import ThankYou from './components/ThankYou.jsx'
+
+// Route pages are code-split: each lazy chunk only loads when its route is
+// visited, so the home page (the landing page) ships a smaller initial bundle.
+// Home sections (Hero…FinalCta) stay eager — they're above/below the fold on
+// the page most visitors land on first.
+const About = lazy(() => import('./components/About.jsx'))
+const Contact = lazy(() => import('./components/Contact.jsx'))
+const Terms = lazy(() => import('./components/Terms.jsx'))
+const Privacy = lazy(() => import('./components/Privacy.jsx'))
+const RiskDisclosure = lazy(() => import('./components/RiskDisclosure.jsx'))
+const NotFound = lazy(() => import('./components/NotFound.jsx'))
+const ThankYou = lazy(() => import('./components/ThankYou.jsx'))
 
 // Clean-path routing: "/" -> home, "/about" -> About, anything unknown -> 404.
 // Fragment anchors like "#register" keep working as in-page scroll links.
@@ -145,12 +150,24 @@ export default function App() {
     return () => document.removeEventListener('click', onClick)
   }, [route])
 
+  // Brief branded placeholder shown while a code-split route chunk loads.
+  // min-height keeps the page stable so the header/footer don't jump.
+  const PageFallback = () => (
+    <div className="route-loading" role="status" aria-label="Loading page">
+      <span className="route-spinner" aria-hidden="true" />
+    </div>
+  )
+
   // Shared page shell — SEO head metadata, header, main, footer.
+  // Suspense wraps only the page content: the header/footer stay mounted
+  // (no flash) while a lazy route chunk is still downloading.
   const Layout = ({ routeName, children }) => (
     <>
       <Seo route={routeName} />
       <Header route={routeName} />
-      <main>{children}</main>
+      <main>
+        <Suspense fallback={<PageFallback />}>{children}</Suspense>
+      </main>
       <Footer />
     </>
   )

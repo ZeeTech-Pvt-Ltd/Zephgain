@@ -1026,3 +1026,23 @@ body.menu-open { overflow: hidden; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Route-loading placeholder shown while a code-split page chunk downloads.
+   min-height keeps header/footer stable (no layout jump on route change). */
+.route-loading {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+}
+.route-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid var(--primary-lighter);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: route-spin .8s linear infinite;
+}
+@keyframes route-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .route-spinner { animation: none; border-top-color: var(--primary-light); }
+}
