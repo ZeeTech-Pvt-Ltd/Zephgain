@@ -735,8 +735,8 @@ body.menu-open { overflow: hidden; }
   font-size: 13.5px; font-weight: 600; color: var(--ink); white-space: nowrap;
 }
 .about-chip .ico { width: 32px; height: 32px; border-radius: 50%; background: var(--grad); color: #fff; display: grid; place-items: center; flex: 0 0 auto; }
-.about-chip.one { top: 20px; left: -18px; }
-.about-chip.two { bottom: 26px; right: -14px; }
+.about-chip.one { top: -10px; left: -45px; }
+.about-chip.two { bottom: 26px; right: -45px; }
 
 /* Trading visual (About hero) — original SVG/CSS dashboard in brand colours */
 .about-visual .tv-card {
