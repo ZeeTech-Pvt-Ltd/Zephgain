@@ -198,7 +198,7 @@ export default function About() {
                 <div className="about-story-media">
                   <span className="about-story-fallback" aria-hidden="true">{s.step}</span>
                   <img
-                    src={`/about/story-${i + 1}.jpg`}
+                    src={`/about/story-${i + 1}.webp`}
                     alt={`${s.title} — Zephgain`}
                     loading="lazy"
                     onError={(e) => { e.currentTarget.style.display = 'none' }}
