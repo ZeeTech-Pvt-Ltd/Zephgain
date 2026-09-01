@@ -25,7 +25,7 @@ import ThankYou from './components/ThankYou.jsx'
 
 // Clean-path routing: "/" -> home, "/about" -> About, anything unknown -> 404.
 // Fragment anchors like "#register" keep working as in-page scroll links.
-const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you']
+const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you', 'How-It-Works', 'why-invest']
 
 const getRoute = (path = location.pathname) => {
   const clean = path.split('?')[0].replace(/\/+$/, '')
@@ -175,6 +175,30 @@ export default function App() {
         <Header route="thank-you" />
         <main>
           <ThankYou />
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
+  if (route === 'How-It-Works') {
+    return (
+      <>
+        <Header route="How-It-Works" />
+        <main>
+          <HowItWorks />
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
+  if (route === 'why-invest') {
+    return (
+      <>
+        <Header route="why-invest" />
+        <main>
+          <Priorities />
         </main>
         <Footer />
       </>

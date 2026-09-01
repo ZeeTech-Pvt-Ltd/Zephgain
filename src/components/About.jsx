@@ -110,7 +110,7 @@ export default function About() {
               <a className="btn btn-primary" href="#register">
                 Register Now <ArrowRight />
               </a>
-              <a className="btn btn-ghost" href="#how">How It Works</a>
+              <a className="btn btn-ghost" href="/How-It-Works">How It Works</a>
             </div>
           </div>
 
