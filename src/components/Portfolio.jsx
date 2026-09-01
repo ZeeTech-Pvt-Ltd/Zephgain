@@ -16,7 +16,7 @@ export default function Portfolio() {
             <div className="mini-bal">
               {visual.balance} <span>{visual.note}</span>
             </div>
-            <div className="bar-chart" style={{ height: 120 }}>
+            <div className="bar-chart">
               {visual.bars.map((h, i) => (
                 <i key={i} style={{ height: `${h}%`, animationDelay: `${i * 55}ms` }} />
               ))}
