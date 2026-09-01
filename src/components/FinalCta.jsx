@@ -5,7 +5,7 @@ export default function FinalCta() {
     <CtaBanner
       eyebrow="Your first trade"
       title="Is Closer Than You Think"
-      text="Complete your registration in under two minutes and let our AI handle the rest. Registration is currently limited to verified residents in Australia."
+      text="Register in about two minutes and let the AI take it from there. Availability is currently limited to verified residents of Australia."
       cta="Sign Up Now"
     />
   )

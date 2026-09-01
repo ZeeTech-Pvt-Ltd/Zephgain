@@ -8,7 +8,7 @@ export default function HowItWorks() {
         <div className="section-head reveal">
           <span className="eyebrow">Simple by design</span>
           <h2 className="h2">Get Started in <mark>3 Easy Steps</mark></h2>
-          <p className="lead">No complicated setup, no unnecessary steps. Zephgain simplifies the entire process into a clear, automated experience you can get started with in minutes.</p>
+          <p className="lead">A clear, guided path from sign-up to your first trade — with no jargon, no complications, and nothing extra to figure out.</p>
         </div>
 
         <div className="steps">

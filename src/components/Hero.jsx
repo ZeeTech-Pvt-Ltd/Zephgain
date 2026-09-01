@@ -58,12 +58,12 @@ export default function Hero() {
             <span className="ico" style={{ background: 'linear-gradient(114deg,#56863E,#8FC473)' }}>
               <Check />
             </span>
-            <div><b>AU Verified</b><span>Secure sign-up</span></div>
+            <div><b>AU Verified</b><span>Protected registration</span></div>
           </div>
 
           <div className="reg-card">
             <h3>Register Now</h3>
-            <p className="sub">Getting started takes less than 2 minutes</p>
+            <p className="sub">It only takes about two minutes to get started</p>
             <RegistrationForm />
           </div>
         </div>

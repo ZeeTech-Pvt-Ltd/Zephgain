@@ -8,7 +8,7 @@ export default function Features() {
         <div className="section-head reveal">
           <span className="eyebrow">Built to perform</span>
           <h2 className="h2">Streamlined Trading Powered by <mark>Intelligence</mark> and <mark>Security</mark></h2>
-          <p className="lead">Zephgain helps you trade smarter and more efficiently — no matter where you are in Australia.</p>
+          <p className="lead">Everything you need to trade with confidence — wherever you are in Australia.</p>
         </div>
 
         <div className="feat-grid">
