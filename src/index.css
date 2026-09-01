@@ -1038,6 +1038,15 @@ body.menu-open { overflow: hidden; }
   .about-visual .tv-bal { font-size: 26px; }
   .about-visual .tv-coin { width: 46px; height: 46px; font-size: 19px; }
 }
+/* Very small phones: the phone field and the 2-column name fields carry
+   intrinsic min-widths that force the form card wider than the 320-360px
+   viewport, and .hero's overflow:hidden clips the overflow. Stacking the name
+   fields and allowing the grid/flex items to shrink below their content lets
+   the card fit the container. */
+@media (max-width: 400px) {
+  .field-row { grid-template-columns: 1fr; }
+  .form-wrap, .field-row > *, .pn-wrap { min-width: 0; }
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
