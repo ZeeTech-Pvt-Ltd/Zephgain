@@ -820,48 +820,19 @@ body.menu-open { overflow: hidden; }
 .about-story { display: grid; gap: 48px; max-width: 980px; margin-inline: auto; }
 .about-story-row { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
 .about-story-row.reverse .about-story-media { order: 2; }
-/* Phone mockup (About story) — original SVG/CSS device visual in brand colours */
+/* About story imagery — real photos in a branded 16:10 frame.
+   A photo is expected at /about/story-N.jpg; if one is missing the
+   large step number shows as a graceful branded placeholder. */
 .about-story-media {
   position: relative; border-radius: var(--r-lg); border: 1px solid var(--line); box-shadow: var(--shadow-md);
   background: radial-gradient(30rem 22rem at 72% 0%, rgba(38, 121, 255, .10), transparent 60%), linear-gradient(180deg, var(--primary-lightest), #fff);
-  aspect-ratio: 16 / 10; overflow: hidden; container-type: inline-size;
+  aspect-ratio: 16 / 10; overflow: hidden;
 }
-.about-story-media .pm { position: absolute; inset: 0; display: grid; place-items: center; }
-.about-story-media .pm-glow { position: absolute; width: 64%; height: 80%; top: 6%; left: 50%; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle, rgba(38, 121, 255, .16), rgba(38, 121, 255, 0) 70%); filter: blur(8px); }
-.about-story-media .pm-phone {
-  position: relative; width: 27.5cqw; height: 58cqw; border-radius: 5.5cqw; z-index: 2;
-  border: 1px solid rgba(23, 91, 221, .28); background: #fff;
-  box-shadow: 0 26px 46px rgba(23, 91, 221, .22), inset 0 0 0 1.5cqw #fff;
-  padding: 3cqw; transform: rotate(-4deg);
+.about-story-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-story-media .about-story-fallback {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: 76px; font-weight: 800; letter-spacing: .02em; color: rgba(23, 91, 221, .13);
 }
-.about-story-media .pm-notch { position: absolute; top: 3.5cqw; left: 50%; transform: translateX(-50%); width: 12cqw; height: 3cqw; border-radius: 999px; background: #0B1226; z-index: 3; }
-.about-story-media .pm-screen {
-  width: 100%; height: 100%; border-radius: 3.5cqw; border: 1px solid var(--line);
-  background: linear-gradient(180deg, #fff, var(--primary-lightest));
-  display: flex; flex-direction: column; padding: 7cqw 4cqw 3.5cqw; overflow: hidden;
-}
-.about-story-media .pm-status { display: flex; align-items: center; justify-content: space-between; font-size: 2.2cqw; font-weight: 700; color: var(--ink); margin-bottom: 2.2cqw; }
-.about-story-media .pm-bars { display: flex; align-items: flex-end; gap: .8cqw; }
-.about-story-media .pm-bars i { width: 1cqw; height: 2.4cqw; border-radius: 1px; background: var(--primary-light); }
-.about-story-media .pm-bars i:nth-child(2) { height: 3.4cqw; }
-.about-story-media .pm-bars i:nth-child(3) { height: 4.2cqw; }
-.about-story-media .pm-bal { display: grid; gap: .6cqw; }
-.about-story-media .pm-bal span { font-size: 2.4cqw; font-weight: 600; color: var(--muted); }
-.about-story-media .pm-bal b { font-size: 4.4cqw; font-weight: 800; color: var(--ink); letter-spacing: -.01em; line-height: 1.05; }
-.about-story-media .pm-bal em { font-size: 2.6cqw; font-weight: 700; color: var(--green); font-style: normal; }
-.about-story-media .pm-chart { width: 100%; height: auto; margin-top: 2cqw; flex: 0 0 auto; }
-.about-story-media .pm-line { fill: none; stroke: var(--primary-light); stroke-width: 2.5; stroke-linecap: round; }
-.about-story-media .pm-end { fill: var(--primary-light); animation: pulse 1.6s infinite; }
-.about-story-media .pm-foot { display: flex; align-items: center; justify-content: space-between; gap: 1cqw; margin-top: auto; padding-top: 2.2cqw; border-top: 1px dashed rgba(23, 91, 221, .25); font-size: 2.2cqw; font-weight: 600; color: var(--muted); }
-.about-story-media .pm-foot b { color: var(--ink); }
-.about-story-media .pm-chip {
-  position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: .8cqw; white-space: nowrap;
-  background: #fff; border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-md);
-  font-size: 3cqw; font-weight: 700; color: var(--ink); padding: 1.8cqw 2.8cqw;
-}
-.about-story-media .pm-chip-tl { top: 11%; left: 3%; }
-.about-story-media .pm-chip-br { bottom: 11%; right: 3%; color: var(--green); }
-.about-story-media .pm-chip .pm-dot { width: 1.6cqw; height: 1.6cqw; border-radius: 50%; background: var(--green); flex: 0 0 auto; }
 .about-story-copy { display: grid; gap: 10px; justify-items: start; }
 .about-story-step {
   font-size: 13px; font-weight: 800; letter-spacing: .12em; color: var(--primary-dark);

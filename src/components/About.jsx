@@ -1,6 +1,5 @@
 import CtaBanner from './CtaBanner.jsx'
 import TradingVisual from './TradingVisual.jsx'
-import PhoneMockup from './PhoneMockup.jsx'
 import { Check, ArrowRight, Icon } from './icons.jsx'
 
 const stats = [
@@ -197,7 +196,13 @@ export default function About() {
             {story.map((s, i) => (
               <div className={`about-story-row ${i % 2 ? 'reverse' : ''} reveal`} key={s.step}>
                 <div className="about-story-media">
-                  <PhoneMockup variant={i + 1} />
+                  <span className="about-story-fallback" aria-hidden="true">{s.step}</span>
+                  <img
+                    src={`/about/story-${i + 1}.jpg`}
+                    alt={`${s.title} — Zephgain`}
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.style.display = 'none' }}
+                  />
                 </div>
                 <div className="about-story-copy">
                   <span className="about-story-step">{s.step}</span>
