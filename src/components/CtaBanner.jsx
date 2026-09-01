@@ -10,7 +10,7 @@ export default function CtaBanner({ eyebrow, title, text, cta }) {
             <h2>{title}</h2>
             <p>{text}</p>
           </div>
-          <a className="btn btn-light" href="#register">
+          <a className="btn btn-light" href="/" data-scroll="#register">
             {cta} <ArrowRight />
           </a>
         </div>

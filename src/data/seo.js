@@ -73,7 +73,7 @@ function faqPageSchema() {
 }
 
 const homeDescription =
-  'Zephgain is an AI-powered automated trading platform for Australia — 24/7 automated strategies, live signals, and bank-grade security. Start with just $250.'
+  'Zephgain — AI-powered automated trading platform for Australia. 24/7 automated strategies, live signals, bank-grade security. Start with just $250.'
 
 export const seo = {
   home: {

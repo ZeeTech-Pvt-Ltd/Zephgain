@@ -3,11 +3,11 @@
 // =========================================================
 
 export const nav = [
-  { label: 'Home', href: '#top' },
+  { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'How It Works', href: '/How-It-Works' },
   { label: 'Why Invest', href: '/why-invest' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'FAQ', href: '/', scroll: '#faq' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -233,18 +233,18 @@ export const capabilities = [
 export const footer = {
   blurb: 'Zephgain is an AI-driven automated trading platform for users in Australia — automated strategies, live market insights, and dependable security in one place.',
   company: [
-    { label: 'Home', href: '#top' },
+    { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
     { label: 'How It Works', href: '/How-It-Works' },
     { label: 'Why Invest', href: '/why-invest' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'FAQ', href: '/', scroll: '#faq' },
     { label: 'Contact Us', href: '/contact' },
   ],
   legal: [
     { label: 'Term Of Use', href: '/terms' },
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Risk Disclosure', href: '/disclosure' },
-    { label: 'Sign Up', href: '#register' },
+    { label: 'Sign Up', href: '/', scroll: '#register' },
   ],
   disclaimer:
     'HIGH RISK WARNING: Dealing or trading FX, CFDs, cryptocurrencies and other financial instruments is highly speculative, carries a non-negligible level of risk and may not be suitable for all investors. You may lose some or all of your invested capital, therefore you should not speculate with capital that you cannot afford to lose. All profit examples shown on this website are illustrative and do not guarantee similar results. Zephgain operates as a technology services company, does not provide financial, investment or legal advice, and does not accept any liability for loss or damage as a result of reliance on the information contained within this website. Laws regarding financial activities vary throughout the world, and it is your sole responsibility to ensure that your use of this website complies with applicable laws and regulations in your jurisdiction of residence.',

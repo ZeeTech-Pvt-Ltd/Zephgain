@@ -77,6 +77,25 @@ export default function App() {
         return
       }
 
+      // In-page scroll links carry a clean "/" href (so the URL bar and the
+      // hover preview stay hash-free) plus a data-scroll target. On route
+      // pages they go home first, since those sections only exist on home.
+      const scrollTo = a.getAttribute('data-scroll')
+      if (scrollTo) {
+        e.preventDefault()
+        const doScroll = () => {
+          if (scrollTo === '#top') window.scrollTo(0, 0)
+          else document.querySelector(scrollTo)?.scrollIntoView()
+        }
+        if (route === 'home') doScroll()
+        else {
+          history.pushState(null, '', '/')
+          setRoute('home')
+          setTimeout(doScroll, 100)
+        }
+        return
+      }
+
       if (href.startsWith('#')) {
         e.preventDefault()
         const doScroll = () => {
@@ -97,6 +116,8 @@ export default function App() {
       if (href.startsWith('/')) {
         const next = getRoute(href)
         if (next === route) {
+          // Same page — just scroll to top, no reload.
+          e.preventDefault()
           window.scrollTo(0, 0)
           return
         }

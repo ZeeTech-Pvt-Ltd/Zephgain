@@ -10,8 +10,11 @@ export default function Header({ route = 'home' }) {
   const active = useScrollSpy(ids)
 
   // Route links (/about, /contact…) are active on their own page; home
-  // section anchors (#how, #faq…) are active via scroll-spy on the home page.
+  // sections (Home -> top, FAQ -> #faq, …) are active via scroll-spy on the
+  // home page. Links that scroll use the data-scroll target for the check.
   const isActive = (item) => {
+    if (item.scroll) return route === 'home' && active === item.scroll.slice(1)
+    if (item.href === '/') return route === 'home' && active === 'top'
     if (item.href.startsWith('/')) return route === item.href.slice(1)
     return route === 'home' && active === item.href.slice(1)
   }
@@ -39,6 +42,7 @@ export default function Header({ route = 'home' }) {
             <a
               key={item.href}
               href={item.href}
+              data-scroll={item.scroll || undefined}
               className={isActive(item) ? 'active' : ''}
             >
               {item.label}
@@ -47,7 +51,7 @@ export default function Header({ route = 'home' }) {
         </nav>
 
         <div className="header-actions">
-          <a className="btn btn-primary btn-signup" href="#register">Sign Up</a>
+          <a className="btn btn-primary btn-signup" href="/" data-scroll="#register">Sign Up</a>
           <button
             className={`burger ${menuOpen ? 'open' : ''}`}
             onClick={() => setMenuOpen((v) => !v)}
@@ -61,11 +65,11 @@ export default function Header({ route = 'home' }) {
 
       <nav className={`mobile-menu container ${menuOpen ? 'open' : ''}`} aria-label="Mobile">
         {nav.map((item) => (
-          <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+          <a key={item.href} href={item.href} data-scroll={item.scroll || undefined} onClick={() => setMenuOpen(false)}>
             {item.label}
           </a>
         ))}
-        <a href="#register" onClick={() => setMenuOpen(false)}>Sign Up</a>
+        <a href="/" data-scroll="#register" onClick={() => setMenuOpen(false)}>Sign Up</a>
       </nav>
     </header>
   )

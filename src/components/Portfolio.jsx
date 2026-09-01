@@ -38,7 +38,7 @@ export default function Portfolio() {
               </li>
             ))}
           </ul>
-          <a className="btn btn-primary" href="#register">Get Started</a>
+          <a className="btn btn-primary" href="/" data-scroll="#register">Get Started</a>
         </div>
       </div>
     </section>

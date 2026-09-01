@@ -107,7 +107,7 @@ export default function About() {
               transparency.
             </p>
             <div className="about-cta">
-              <a className="btn btn-primary" href="#register">
+              <a className="btn btn-primary" href="/" data-scroll="#register">
                 Register Now <ArrowRight />
               </a>
               <a className="btn btn-ghost" href="/How-It-Works">How It Works</a>

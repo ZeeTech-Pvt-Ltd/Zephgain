@@ -23,7 +23,7 @@ export default function HowItWorks({ asPage = false }) {
               </div>
               <h3>{step.title}</h3>
               <p>{step.text}</p>
-              <a className="btn-link" href="#register">
+              <a className="btn-link" href="/" data-scroll="#register">
                 {step.cta} <ArrowRight size={16} />
               </a>
             </article>
