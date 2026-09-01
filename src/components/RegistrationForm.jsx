@@ -155,7 +155,8 @@ export default function RegistrationForm() {
 
       <p className="legal">
         By entering your personal information and clicking the button, you accept the{' '}
-        <a href="#privacy">Privacy Policy</a> and <a href="#terms">Terms of Use</a> of the website.
+        <a href="https://zephgain-au.com/privacy">Privacy Policy</a> and{' '}
+        <a href="https://zephgain-au.com/terms">Terms of Use</a> of the website.
       </p>
 
       <div className="pay-row" aria-label="Accepted payment methods">
