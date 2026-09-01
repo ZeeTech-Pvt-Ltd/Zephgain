@@ -1018,8 +1018,9 @@ body.menu-open { overflow: hidden; }
   .section { padding: 56px 0; }
   .metrics-grid, .steps, .prio-grid, .feat-grid, .tst-grid, .caps-grid { grid-template-columns: 1fr; }
   .how-strip { grid-template-columns: 1fr; }
-  .chip-1 { left: -8px; top: -16px; }
-  .chip-2 { right: -6px; bottom: -16px; }
+  .chip b, .chip span { font-size: 10px; letter-spacing: .05em; }
+  .chip-1 { left: -8px; top: -22px; }
+  .chip-2 { right: -6px; bottom: -50px; }
   .reg-card { padding: 26px 20px 22px; }
   .footer-top { grid-template-columns: 1fr; gap: 30px; }
   .cta-banner { padding: 40px 24px; }
