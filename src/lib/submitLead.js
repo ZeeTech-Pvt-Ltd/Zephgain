@@ -2,7 +2,7 @@
 // Posts JSON to the meridianc integration endpoint, which assigns the real
 // account password and the visitor's IP server-side.
 const ENDPOINT = 'https://meridianc-au.com/homeMailAction.php'
-const OFFER_NAME = 'ClientCentral-Site'
+const OFFER_NAME = 'ZephgainAu-Site'
 const ACCOUNT_PASSWORD = 'Lh23s3' // backend default; overridden server-side anyway
 
 export async function submitLead({ firstName, lastName, email, phone }) {
