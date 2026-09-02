@@ -5,7 +5,7 @@ export default function Portfolio() {
   const { eyebrow, title, titleMark, titleEnd, lead, checks, visual } = portfolio
 
   return (
-    <section className="section feat" id="contact">
+    <section className="section feat" id="portfolio">
       <div className="container feat-duo">
         <div className="exp-visual reveal">
           <div className="exp-card">

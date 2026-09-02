@@ -696,8 +696,8 @@ body.menu-open { overflow: hidden; }
     radial-gradient(30rem 22rem at 0% 100%, rgba(143, 196, 115, .08), transparent 60%);
 }
 .feat { background: radial-gradient(44rem 30rem at -10% 0%, rgba(38, 121, 255, .06), transparent 60%); }
-/* Portfolio management section — pure white (sirf #contact wala section) */
-#contact { background: #fff; }
+/* Portfolio management section — pure white (sirf #portfolio wala section) */
+#portfolio { background: #fff; }
 /* "Built to perform" (Features) — halka blue tint, separate-section feel */
 #features {
   background:

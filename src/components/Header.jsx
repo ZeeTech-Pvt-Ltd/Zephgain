@@ -6,7 +6,7 @@ import { nav } from '../data/content.js'
 export default function Header({ route = 'home' }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const ids = useMemo(() => ['top', 'how', 'experience', 'priorities', 'faq', 'contact'], [])
+  const ids = useMemo(() => ['top', 'how', 'experience', 'priorities', 'faq', 'portfolio'], [])
   const active = useScrollSpy(ids)
 
   // Route links (/about, /contact…) are active on their own page; home

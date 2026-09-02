@@ -34,7 +34,7 @@ export default function Testimonials() {
                 <div className="tst-stars">{s.stars}</div>
                 <div className="muted" style={{ fontSize: 13.5 }}>{s.note}</div>
               </div>
-              {i === 0 && <span className="divider"></span>}
+              {i < testimonials.summary.length - 1 && <span className="divider"></span>}
             </div>
           ))}
         </div>

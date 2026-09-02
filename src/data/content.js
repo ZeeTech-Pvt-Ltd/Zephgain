@@ -174,7 +174,6 @@ export const testimonials = {
   ],
   summary: [
     { big: '4.8', stars: '★★★★★', note: 'Based on 1,247 reviews' },
-    { big: '4.7', stars: '★★★★☆', note: '189 reviews · 247 ratings' },
   ],
 }
 
@@ -195,7 +194,7 @@ export const portfolio = {
 export const faq = [
   {
     q: 'Is Zephgain Legit?',
-    a: 'Yes. Zephgain is an AI-powered trading platform with a community score of 4.7 out of 5 based on 247 independent reviews. Every trade, signal, and performance figure is visible in real time, and traders across Australia use the platform daily for fast execution.',
+    a: 'Yes. Zephgain is an AI-powered trading platform with a community score of 4.8 out of 5 based on 1,247 independent reviews. Every trade, signal, and performance figure is visible in real time, and traders across Australia use the platform daily for fast execution.',
   },
   {
     q: 'How Much Do I Need to Start Trading on Zephgain?',

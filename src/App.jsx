@@ -201,8 +201,10 @@ export default function App() {
 
       <Testimonials />
       <Portfolio />
-      <Faq />
+      {/* Spec table first, then FAQ last so the final doubt-handling flows
+          straight into the final sign-up CTA (no dry table in between). */}
       <Capabilities />
+      <Faq />
       <FinalCta />
     </Layout>
   )
