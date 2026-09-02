@@ -15,40 +15,36 @@ const pillars = [
   {
     icon: 'bot',
     title: 'AI-Powered Analysis',
-    text: 'Automated market analysis that works around the clock and acts with precision — so opportunities never pass you by.',
+    text: "Zephgain's AI watches the markets continuously and turns what it spots into clear, actionable signals — so a promising move rarely goes unnoticed.",
   },
   {
     icon: 'shield',
     title: 'Bank-Grade Security',
-    text: 'Strong encryption and layered account protections that help keep your funds safe at every step of the journey.',
+    text: 'Funds and personal data are shielded by strong encryption and layered account protection — from the moment you sign up to your very first withdrawal.',
   },
   {
     icon: 'user',
     title: 'Support, Your Way',
-    text: 'A dedicated team ready to help in your language — from your very first trade to your hundredth.',
+    text: 'A real support team is available around the clock to guide you — from your first login through your hundredth trade.',
   },
 ]
 
 const mission = [
   {
     title: 'Accessible',
-    text: "Trading shouldn't be reserved for experts. Zephgain is built to feel intuitive and welcoming, so anyone can start with confidence — whatever their background or experience level.",
+    text: "Expertise shouldn't be a barrier to trading. Every screen on Zephgain is built to feel clear and welcoming, so a first-time trader can start with confidence — whatever their background.",
   },
   {
     title: 'Transparent',
-    text: 'No hidden fees, no unclear terms. Every trade, every charge, and every rule is visible to you before you make a decision.',
+    text: 'What you see is what you get. Fees, trade details, and platform rules are shown plainly up front, so nothing is hidden until after you act.',
   },
   {
     title: 'Innovative',
-    text: 'We constantly refine the platform with the latest AI and algorithmic trading tools, so our users always have access to the most advanced technology available.',
+    text: 'The platform is refined continuously with the latest AI and algorithmic trading technology, keeping Zephgain genuinely current rather than standing still.',
   },
   {
     title: 'Responsible',
-    text: 'We take our duties seriously. Risks are communicated honestly and responsible trading is promoted at every turn.',
-  },
-  {
-    title: 'Built to Last',
-    text: 'Zephgain was designed for the long term — dependable technology, consistent support, and a genuine commitment to growing alongside our users.',
+    text: 'Safety comes first. Trading risks are explained in plain language, and sensible, measured trading is encouraged at every turn.',
   },
 ]
 
@@ -56,37 +52,37 @@ const story = [
   {
     step: '01',
     title: 'The Beginning',
-    text: 'Six fintech and algorithmic trading specialists came together with a single ambition: make crypto trading as straightforward as online banking.',
+    text: 'Zephgain began with six specialists in fintech and algorithmic trading who shared a single goal — to make automated trading as simple and dependable as everyday online banking.',
   },
   {
     step: '02',
     title: 'First Launch',
-    text: 'The platform went live with 12 cryptocurrencies. More than 10,000 users signed up in the very first month — a clean interface and automated tools set us apart from day one.',
+    text: 'The platform launched with 12 cryptocurrencies, and more than 10,000 traders joined in the very first month. A clean, uncluttered interface paired with hands-free automation was what set it apart from day one.',
   },
   {
     step: '03',
     title: 'Growing the Community',
-    text: 'Within a year we passed 500,000 users. We added more currencies and introduced round-the-clock customer support in multiple languages.',
+    text: 'Within its first year, Zephgain passed 500,000 users. More currencies were added, alongside round-the-clock customer support in several languages.',
   },
   {
     step: '04',
-    title: 'Going International',
-    text: 'We expanded into dozens of markets worldwide, introduced local payment methods, and rolled out two-factor authentication across every account.',
+    title: 'Reaching New Markets',
+    text: 'As demand grew, Zephgain broadened into many new markets — adding local payment options and switching on two-factor authentication for every account along the way.',
   },
   {
     step: '05',
     title: 'Today',
-    text: 'With 4M+ registered users and 65+ currencies, Zephgain keeps growing every day. Our mission remains the same: make crypto trading accessible to everyone.',
+    text: 'Now serving 4M+ registered users across 65+ currencies, Zephgain keeps growing every day — with the original mission unchanged: make automated trading accessible to everyone.',
   },
 ]
 
 const badges = ['SSL Certified', 'GDPR Compliant', '256-bit Encryption', 'Available in 98+ Countries', 'Regular Security Audits']
 
 const security = [
-  { icon: 'shield', title: 'Your Funds Stay Safe', text: 'Your cryptocurrency stays in your account at all times. Zephgain is only authorised to trade on your behalf.' },
-  { icon: 'lock', title: 'Bank-Grade Encryption', text: 'All data is protected with 256-bit SSL encryption. API keys are encrypted both at rest and in transit.' },
-  { icon: 'zap', title: 'Two-Factor Authentication', text: 'Secure your account with 2FA, biometric login, and withdrawal confirmations.' },
-  { icon: 'user', title: 'Data Privacy Standards', text: 'We apply strict data-privacy and account-security practices across every market we serve.' },
+  { icon: 'shield', title: 'Your Funds Stay Safe', text: 'Funds remain in your own account at all times. Zephgain is authorised only to place trades on your behalf — nothing more.' },
+  { icon: 'lock', title: 'Bank-Grade Encryption', text: 'All data is protected by 256-bit SSL encryption, and API keys are encrypted both at rest and in transit.' },
+  { icon: 'zap', title: 'Two-Factor Authentication', text: 'Accounts can be secured with two-factor authentication, biometric login, and confirmation steps before any withdrawal.' },
+  { icon: 'user', title: 'Data Privacy Standards', text: 'Strict data-privacy and account-security practices are applied in every market Zephgain serves.' },
 ]
 
 export default function About() {
@@ -242,9 +238,9 @@ export default function About() {
       </section>
 
       <CtaBanner
-        eyebrow="Ready to start trading?"
-        title="Join thousands of traders"
-        text="Access the market tools and automation you need through Zephgain — and take control of your trading in minutes."
+        eyebrow="Ready to begin?"
+        title="Put automated trading to work"
+        text="Create your Zephgain account in about two minutes and let AI-driven strategies trade around the clock — with support available 24/7."
         cta="Register Now"
       />
     </>
