@@ -14,7 +14,7 @@ export const nav = [
 export const hero = {
   eyebrow: '🇦🇺 Chosen by traders across Australia',
   title: 'Zephgain',
-  titleMark: 'platform',
+  titleMark: 'Automated Trading Platform',
   lead: 'Zephgain is the smart trading platform for Australia — AI-powered strategies, live market signals, and dependable security, all in one straightforward place.',
   checks: [
     'AI strategies that trade for you, around the clock',
@@ -47,7 +47,7 @@ export const steps = [
     no: 'STEP 2',
     icon: 'wallet',
     title: 'Deposit Funds',
-    text: 'Begin with as little as $250. We support credit and debit cards, bank transfers, and leading e-wallets, and deposits reach your account within minutes — no waiting around, no hidden charges.',
+    text: 'Begin with as little as AU$250. We support credit and debit cards, bank transfers, and leading e-wallets, and deposits reach your account within minutes — no waiting around, no hidden charges.',
     cta: 'Deposit now',
     green: true,
   },
@@ -198,7 +198,7 @@ export const faq = [
   },
   {
     q: 'How Much Do I Need to Start Trading on Zephgain?',
-    a: 'A minimum deposit of $250 activates your trading account — with no subscription fees, hidden charges, or registration costs. Start small and grow at a pace that suits you.',
+    a: 'A minimum deposit of AU$250 activates your trading account — with no subscription fees, hidden charges, or registration costs. Start small and grow at a pace that suits you.',
   },
   {
     q: 'How Secure Are My Money and Data on Zephgain?',
@@ -226,7 +226,7 @@ export const capabilities = [
   { k: 'Trading Instruments', v: 'Equities, Forex, Crypto & More' },
   { k: 'Account Setup', v: 'Simple and Fast Onboarding' },
   { k: 'Customer Support', v: '24/7 Professional Assistance' },
-  { k: 'Minimum Deposit', v: '$250 · No Hidden Costs' },
+  { k: 'Minimum Deposit', v: 'AU$250 · No Hidden Costs' },
 ]
 
 export const footer = {

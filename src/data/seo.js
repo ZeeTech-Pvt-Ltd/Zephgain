@@ -21,6 +21,46 @@ const organization = {
   logo: `${SITE}/favicon.svg`,
   description:
     'Zephgain is an AI-powered automated trading platform for users in Australia — automated strategies, live market signals, and dependable security in one place.',
+  email: 'support@zephgain-au.com',
+  inLanguage: 'en-AU',
+  areaServed: 'Australia',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Melbourne',
+    addressRegion: 'Victoria',
+    addressCountry: 'AU',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'support@zephgain-au.com',
+    availableLanguage: 'en',
+    hoursAvailable: 'Mo-Su 00:00-24:00',
+  },
+}
+
+// The platform described as a schema.org Service, geo-scoped to Australia —
+// all fields reflect claims already on the site (Melbourne base, 24/7
+// support, AU$250 minimum deposit), nothing invented.
+function serviceSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${SITE}/#service`,
+    name: 'Zephgain Automated Trading Platform',
+    serviceType: 'Automated trading platform',
+    description:
+      'AI-powered automated trading platform for users in Australia — automated strategies, live market signals, and dependable security in one place.',
+    provider: { '@id': `${SITE}/#organization` },
+    areaServed: 'Australia',
+    audience: { '@type': 'Audience', audienceType: 'Traders in Australia' },
+    offers: {
+      '@type': 'Offer',
+      description: 'Minimum deposit to activate a trading account',
+      price: '250',
+      priceCurrency: 'AUD',
+    },
+  }
 }
 
 const website = {
@@ -73,7 +113,7 @@ function faqPageSchema() {
 }
 
 const homeDescription =
-  'Zephgain — AI-powered automated trading platform for Australia. 24/7 automated strategies, live signals, bank-grade security. Start with just $250.'
+  'Zephgain — AI-powered automated trading platform for Australia. 24/7 automated strategies, live signals, bank-grade security. Start with just AU$250.'
 
 export const seo = {
   home: {
@@ -85,7 +125,7 @@ export const seo = {
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
     ogImageAlt: 'Zephgain — AI-powered automated trading platform for Australia',
-    schema: [organization, website, webPage('Zephgain — AI-Powered Automated Trading Platform in Australia', `${SITE}/`, homeDescription), faqPageSchema()],
+    schema: [organization, website, webPage('Zephgain — AI-Powered Automated Trading Platform in Australia', `${SITE}/`, homeDescription), faqPageSchema(), serviceSchema()],
   },
 
   about: {
@@ -121,7 +161,7 @@ export const seo = {
   'how-it-works': {
     title: 'How Zephgain Works — Get Started in 3 Easy Steps',
     description:
-      'Getting started with Zephgain takes about two minutes. Create your account, deposit from just $250, and let the AI trade around the clock — no hidden fees.',
+      'Getting started with Zephgain takes about two minutes. Create your account, deposit from just AU$250, and let the AI trade around the clock — no hidden fees.',
     keywords: 'how to start automated trading, Zephgain sign up, AI trading steps, automated trading for beginners',
     canonical: `${SITE}/how-it-works`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',

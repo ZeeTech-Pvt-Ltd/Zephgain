@@ -6,6 +6,11 @@ import { priorities } from '../data/content.js'
 // intent ("Why Invest with Zephgain") instead of the in-page section title.
 export default function Priorities({ asPage = false }) {
   const Heading = asPage ? 'h1' : 'h2'
+  // asPage (/why-invest) adds an Australia geo-signal; the in-page home
+  // section keeps the original shorter lead.
+  const leadText = asPage
+    ? 'Why traders across Australia choose Zephgain — security, ease of use, and openness at every step.'
+    : priorities.lead
   return (
     <section className="section prio" id="priorities">
       <div className="container">
@@ -16,7 +21,7 @@ export default function Priorities({ asPage = false }) {
           ) : (
             <Heading className="h2">{priorities.title}<mark>{priorities.titleMark}</mark></Heading>
           )}
-          <p className="lead">{priorities.lead}</p>
+          <p className="lead">{leadText}</p>
         </div>
 
         <div className="prio-grid">
@@ -30,7 +35,7 @@ export default function Priorities({ asPage = false }) {
                 <div className="cap">{card.cap}</div>
               </div>
               <div className="prio-body">
-                <div className="prio-title">{card.title}</div>
+                <h3 className="prio-title">{card.title}</h3>
                 <div className="prio-sub">{card.sub}</div>
                 <ul className="prio-list">
                   {card.items.map((item) => (

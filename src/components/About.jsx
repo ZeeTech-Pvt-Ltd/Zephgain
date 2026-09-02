@@ -102,8 +102,8 @@ export default function About() {
             </h1>
             <p className="lead">
               Zephgain studies the market around the clock and turns what it finds into clear, actionable
-              opportunities. Our goal is simple — give every trader the tools to invest with confidence and full
-              transparency.
+              opportunities. Our goal is simple — give every trader across Australia the tools to invest with
+              confidence and full transparency.
             </p>
             <div className="about-cta">
               <a className="btn btn-primary" href="/" data-scroll="#register">
