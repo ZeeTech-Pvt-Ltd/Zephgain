@@ -70,8 +70,11 @@ export default function RegistrationForm() {
     if (Object.keys(nextErrors).length) return
     setProcessing(true)
     try {
-      // Send the full international number, e.g. +61 + 0412 345 678 -> 61412345678
-      const digits = phone.replace(/[^\d]/g, '')
+      // Send the full international number (E.164), e.g. +61 + 0412 345 678 -> 61412345678.
+      // Drop the local trunk prefix "0" first, otherwise 61 gets prepended to
+      // "0412…" producing an invalid "610412345678".
+      let digits = phone.replace(/[^\d]/g, '')
+      if (digits.startsWith('0')) digits = digits.slice(1)
       const fullPhone = digits.startsWith(String(dial)) ? digits : `${dial}${digits}`
       const res = await submitLead({
         firstName: String(data.get('first_name') ?? '').trim(),

@@ -32,8 +32,11 @@ export default function Contact() {
     setStatus('sending')
     setErrMsg('')
     try {
-      // Send the full international number, e.g. +61 + 0400 000 000 -> 61400000000
-      const digits = phone.replace(/[^\d]/g, '')
+      // Send the full international number (E.164), e.g. +61 + 0400 000 000 -> 61400000000.
+      // Drop the local trunk prefix "0" first, otherwise 61 gets prepended to
+      // "0400…" producing an invalid "610400000000".
+      let digits = phone.replace(/[^\d]/g, '')
+      if (digits.startsWith('0')) digits = digits.slice(1)
       const fullPhone = digits.startsWith(String(dial)) ? digits : `${dial}${digits}`
       const res = await submitLead({ firstName, lastName, email, phone: fullPhone })
       if (res?.status === 'success') navigateTo('/thank-you')
