@@ -1,3 +1,4 @@
+import { Check } from './icons.jsx'
 import { experience } from '../data/content.js'
 
 export default function Experience() {
@@ -17,6 +18,16 @@ export default function Experience() {
             <div className="exp-copy">
               <h3 className="h3">{row.title}</h3>
               <p>{row.text}</p>
+              {row.points && (
+                <ul className="exp-points">
+                  {row.points.map((pt) => (
+                    <li key={pt}>
+                      <span className="tick"><Check size={13} /></span>
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             <div className="exp-visual">

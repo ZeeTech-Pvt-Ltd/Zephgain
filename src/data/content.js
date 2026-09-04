@@ -76,21 +76,45 @@ export const experience = {
     {
       title: 'Advanced AI Technologies',
       text: "At the heart of the platform is intelligent automation. Zephgain studies live markets and acts on opportunities across multiple asset classes, so the work happens for you while you stay in control of your account.",
+      points: [
+        '24/7 automated analysis of live markets',
+        'Signals across multiple asset classes in one place',
+        'Hands-free trading while you stay in control',
+        'Clear visibility into every automated action',
+      ],
       label: 'Portfolio value', sub: '▲ 12.4%', balance: '$5,450.50', bars: [34, 48, 40, 62, 55, 74, 66, 88], badge: 'AI Active 24/7', pos: 'b1',
     },
     {
       title: 'AI-Powered Trading Engine',
       text: "Our adaptive engine responds the moment market conditions shift. Cryptocurrency trading carries risk by nature, but a transparent approach and proactive technology give you access to tools built for speed and clarity.",
+      points: [
+        'Adapts instantly when market conditions shift',
+        'Real-time signals with no hidden steps',
+        'Built for speed and clarity in every market',
+        'Active around the clock on your behalf',
+      ],
       label: 'AI status', sub: 'Active 24/7', balance: 'Executing…', balanceNote: 'LIVE', bars: [52, 38, 70, 58, 82, 64, 92], badge: 'Real-time signals', pos: 'b2', solid: true,
     },
     {
       title: 'Simple and Clear Investing',
       text: 'Whether you are brand new to trading or a seasoned investor, Zephgain keeps things simple. Complex concepts are broken down into clear steps, so diversifying your portfolio stays easy and understandable.',
+      points: [
+        'Clean, jargon-free guidance for every level',
+        'Complex concepts broken into clear steps',
+        'Diversify your portfolio in just a few clicks',
+        'Designed for beginners and seasoned traders alike',
+      ],
       label: '3-click trading', sub: 'Beginner friendly', balance: 'Simple.', balanceNote: 'No jargon', bars: [30, 42, 38, 56, 50, 64, 60, 76], badge: 'For every level', pos: 'b3',
     },
     {
       title: 'Convenient and Reliable Management',
       text: 'Your dashboard puts everything in one place — trades, performance, and signals — so you always know exactly where you stand. That clarity is part of what makes Zephgain a platform you can rely on.',
+      points: [
+        'Trades, performance, and signals in one dashboard',
+        'Withdraw your funds whenever you choose',
+        'Your full activity history at a glance',
+        'Reliable account access around the clock',
+      ],
       label: 'Balance', sub: 'Withdraw anytime', balance: '$12,840.90', bars: [44, 58, 50, 72, 64, 80, 74, 96], badge: 'Transparent dashboard', pos: 'b1',
     },
   ],

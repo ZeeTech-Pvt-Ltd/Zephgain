@@ -422,7 +422,8 @@ body.menu-open { overflow: hidden; }
 /* Experience redesign — bigger dashboard-style visuals, scoped to THIS section
    so the Portfolio card keeps its original look. */
 .exp-sec .exp-row { grid-template-columns: 1fr 1.1fr; align-items: center; gap: 56px; }
-.exp-sec .exp-row + .exp-row { margin-top: 84px; }
+.exp-sec .section-head { margin-bottom: 56px; }
+.exp-sec .exp-row + .exp-row { margin-top: 120px; }
 .exp-sec .exp-copy { gap: 16px; }
 .exp-sec .exp-copy .h3 { font-size: 24px; }
 .exp-sec .exp-copy p { line-height: 1.7; }
@@ -452,6 +453,16 @@ body.menu-open { overflow: hidden; }
 .exp-sec .exp-badge.b1 { bottom: -16px; left: -14px; }
 .exp-sec .exp-badge.b2 { top: -16px; right: -6px; }
 .exp-sec .exp-badge.b3 { bottom: -14px; right: 18px; }
+.exp-sec .exp-points {
+  display: grid; gap: 11px; margin: 6px 0 0; padding: 0;
+  list-style: none;
+}
+.exp-sec .exp-points li {
+  display: flex; align-items: flex-start; gap: 11px;
+  font-size: 15px; font-weight: 500; color: #2B3644; line-height: 1.5;
+}
+.exp-sec .exp-points .tick { width: 21px; height: 21px; margin-top: 1px; }
+.exp-sec .exp-points .tick svg { display: block; }
 
 /* Portfolio management visual — enlarged to match the platform cards */
 .feat-duo .exp-visual { width: 100%; }
@@ -976,6 +987,7 @@ body.menu-open { overflow: hidden; }
   .how-strip { grid-template-columns: repeat(2, 1fr); }
   .exp-row { grid-template-columns: 1fr; gap: 34px; }
   .exp-sec .exp-row { grid-template-columns: 1fr; gap: 34px; }
+  .exp-sec .exp-row + .exp-row { margin-top: 88px; }
   .feat-duo { grid-template-columns: 1fr; gap: 32px; }
   .cta-banner { grid-template-columns: 1fr; padding: 48px 34px; }
   .about-hero-inner { grid-template-columns: 1fr; gap: 44px; }
