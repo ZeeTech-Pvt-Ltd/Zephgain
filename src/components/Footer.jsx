@@ -26,11 +26,11 @@ export default function Footer() {
             <p>{footer.blurb}</p>
             <div className="footer-social">
               {socials.map((s) => (
-                <a key={s.label} href="#" aria-label={s.label}>
+                <button type="button" key={s.label} aria-label={s.label}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d={s.path} />
                   </svg>
-                </a>
+                </button>
               ))}
             </div>
           </div>

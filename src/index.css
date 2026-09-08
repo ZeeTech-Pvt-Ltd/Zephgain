@@ -621,8 +621,8 @@ body.menu-open { overflow: hidden; }
 .footer ul li { margin-bottom: 10px; }
 .footer ul a { font-size: 14.5px; color: #C6D0E2; }
 .footer-social { display: flex; gap: 10px; margin-top: 20px; }
-.footer-social a { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,.08); display: grid; place-items: center; transition: background .2s; }
-.footer-social a:hover { background: var(--primary); }
+.footer-social a, .footer-social button { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,.08); display: grid; place-items: center; transition: background .2s; }
+.footer-social a:hover, .footer-social button:hover { background: var(--primary); }
 .footer-legal { border-top: 1px solid rgba(255,255,255,.1); padding: 22px 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 13.5px; color: #93A0B8; }
 .footer-legal nav { display: flex; gap: 22px; flex-wrap: wrap; }
 .disclaimer { border-top: 1px solid rgba(255,255,255,.08); padding: 26px 0 40px; }
@@ -737,8 +737,13 @@ body.menu-open { overflow: hidden; }
 }
 
 /* ---------- Reveal ---------- */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-.reveal[data-revealed] { opacity: 1; transform: none; }
+/* The hide rule is scoped to html.js so content never disappears for no-JS
+   visitors (prerendered HTML stays fully visible). The unhide rule must match
+   the same scope AND carry equal-or-higher specificity, or the hide rule
+   (html.js .reveal, 0,2,1) would keep beating .reveal[data-revealed] (0,2,0)
+   and revealed content would stay invisible even after data-revealed is set. */
+html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+html.js .reveal[data-revealed] { opacity: 1; transform: none; }
 
 /* ---------- About page ---------- */
 .about-hero {
@@ -1048,27 +1053,9 @@ body.menu-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; }
-}
-
-/* Route-loading placeholder shown while a code-split page chunk downloads.
-   min-height keeps header/footer stable (no layout jump on route change). */
-.route-loading {
-  min-height: 60vh;
-  display: grid;
-  place-items: center;
-}
-.route-spinner {
-  width: 34px;
-  height: 34px;
-  border: 3px solid var(--primary-lighter);
-  border-top-color: var(--primary);
-  border-radius: 50%;
-  animation: route-spin .8s linear infinite;
-}
-@keyframes route-spin { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) {
-  .route-spinner { animation: none; border-top-color: var(--primary-light); }
+  /* Must out-specify html.js .reveal (0,2,1), else reduced-motion users on a
+     JS browser would keep content hidden behind the reveal hide rule. */
+  .reveal, html.js .reveal, html.js .reveal[data-revealed] { opacity: 1; transform: none; }
 }
 
 /* ---------- Zephgain Review page (/zephgain-review) ---------- */

@@ -1,6 +1,5 @@
 import RegistrationForm from './RegistrationForm.jsx'
 import Ticker from './Ticker.jsx'
-import CountUp from './CountUp.jsx'
 import { Check, ArrowRight } from './icons.jsx'
 import { hero } from '../data/content.js'
 
@@ -36,7 +35,7 @@ export default function Hero() {
           <div className="hero-stats">
             {hero.stats.map((s) => (
               <div className="hero-stat" key={s.value}>
-                <CountUp className="stat-num" value={s.value} duration={1600} />
+                <span className="stat-num">{s.value}</span>
                 <span>{s.label}</span>
               </div>
             ))}

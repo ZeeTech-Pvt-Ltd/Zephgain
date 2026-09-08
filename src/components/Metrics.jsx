@@ -1,4 +1,3 @@
-import CountUp from './CountUp.jsx'
 import { metrics } from '../data/content.js'
 
 export default function Metrics() {
@@ -8,7 +7,7 @@ export default function Metrics() {
         {metrics.map((m) => (
           <div className={`metric ${m.solid ? 'solid' : ''}`} key={m.label}>
             <span className="deco-dot"></span>
-            <CountUp className="num" value={m.value} duration={900} />
+            <span className="num">{m.value}</span>
             <div className="lbl">{m.label}</div>
           </div>
         ))}

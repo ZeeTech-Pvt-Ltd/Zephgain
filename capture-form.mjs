@@ -1,6 +1,6 @@
 // Capture just the registration card (desktop + mobile) for visual check
 import { spawn } from 'node:child_process'
-import { writeFileSync, mkdirSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
 const PORT = 9334

@@ -78,7 +78,7 @@ export default function PhoneNumberInput({
         aria-haspopup="listbox"
         aria-label={`Selected country ${sel[1]} (+${sel[2]})`}
       >
-        <img className="cp-flag" src={flagSrc(sel[0])} alt="" width="20" height="15" />
+        <img className="cp-flag" src={flagSrc(sel[0])} alt={sel[1]} width="20" height="15" />
         <span className="cp-dial">+{sel[2]}</span>
         <svg className="cp-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
           <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />

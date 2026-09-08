@@ -1,6 +1,16 @@
 {
   "redirects": [
-    { "source": "/How-It-Works", "destination": "/how-it-works", "permanent": true }
+    { "source": "/How-It-Works", "destination": "/", "permanent": true },
+    { "source": "/how-it-works", "destination": "/", "permanent": true },
+    { "source": "/why-invest", "destination": "/", "permanent": true }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" },
+    { "source": "/terms", "destination": "/terms/index.html" },
+    { "source": "/privacy", "destination": "/privacy/index.html" },
+    { "source": "/disclosure", "destination": "/disclosure/index.html" },
+    { "source": "/thank-you", "destination": "/thank-you/index.html" },
+    { "source": "/zephgain-review", "destination": "/zephgain-review/index.html" }
+  ]
 }
