@@ -51,7 +51,15 @@ export default function Faq() {
                 aria-labelledby={`faq-question-${i}`}
                 ref={(el) => (answerRefs.current[i] = el)}
               >
-                <p>{item.a}</p>
+                <p>
+                  {item.a}
+                  {item.link && (
+                    <>
+                      {' '}
+                      <a className="faq-more" href={item.link.href}>{item.link.text}</a>
+                    </>
+                  )}
+                </p>
               </div>
             </div>
           ))}

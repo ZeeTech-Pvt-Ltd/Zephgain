@@ -340,6 +340,20 @@ body.menu-open { overflow: hidden; }
 .metric:nth-child(2) .deco-dot, .metric:nth-child(4) .deco-dot { background: rgba(23,91,221,.06); }
 .metric.solid .deco-dot { background: rgba(255,255,255,.14); }
 
+/* ---------- What is Zephgain ---------- */
+.whatis { background: var(--white); }
+.whatis .whatis-copy {
+  max-width: 940px; margin-inline: auto;
+  text-align: center;
+}
+.whatis .whatis-copy h2 { margin-bottom: 18px; }
+.whatis .whatis-copy p {
+  max-width: 800px; margin-inline: auto;
+  color: var(--muted); font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.7;
+}
+.whatis .whatis-copy p + p { margin-top: 16px; }
+
 /* ---------- How it works ---------- */
 .how { background: var(--primary-lightest); position: relative; overflow: hidden; }
 .how::before {
@@ -1056,3 +1070,76 @@ body.menu-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .route-spinner { animation: none; border-top-color: var(--primary-light); }
 }
+
+/* ---------- Zephgain Review page (/zephgain-review) ---------- */
+.rv-hero { background: linear-gradient(180deg, var(--primary-lighter) 0%, #fff 100%); padding: 84px 0 40px; }
+.rv-hero-inner { text-align: center; max-width: 900px; }
+.rv-hero h1 { font-size: clamp(30px, 4.8vw, 46px); line-height: 1.13; margin: 14px 0 20px; }
+.rv-hero .lead { color: var(--muted); font-size: 17px; line-height: 1.7; max-width: 780px; margin-inline: auto; }
+.rv-hero .lead a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(23, 91, 221, .35); }
+
+.rv-body { padding: 44px 0 96px; background: #fff; }
+.rv-wrap { max-width: 820px; margin-inline: auto; }
+.rv-intro { color: var(--muted); font-size: 17px; line-height: 1.75; margin-bottom: 0; }
+
+.rv-sec { margin-top: 52px; }
+.rv-sec:first-of-type { margin-top: 34px; }
+.rv-sec h2 { font-size: clamp(21px, 2.4vw, 26px); line-height: 1.28; margin-bottom: 16px; color: var(--ink); }
+.rv-sec p { color: var(--muted); font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+.rv-sec p:last-child { margin-bottom: 0; }
+.rv-sec a, .rv-intro a, .rv-risk a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(23, 91, 221, .35); transition: color .2s ease, text-decoration-color .2s ease; }
+.rv-sec a:hover, .rv-intro a:hover, .rv-risk a:hover { color: var(--primary-dark); text-decoration-color: currentColor; }
+
+/* At-a-glance spec table */
+.rv-glance { border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); }
+.rv-glance-row { display: grid; grid-template-columns: minmax(160px, 230px) 1fr; gap: 18px; padding: 14px 22px; align-items: baseline; }
+.rv-glance-row + .rv-glance-row { border-top: 1px solid var(--line); }
+.rv-glance-row:nth-child(even) { background: var(--primary-lightest); }
+.rv-glance dt { font-weight: 700; color: var(--ink); font-size: 14.5px; }
+.rv-glance dd { color: var(--muted); font-size: 15px; line-height: 1.55; }
+
+/* Getting-started steps (numbered) */
+.rv-steps { list-style: decimal; padding-left: 26px; margin: 0 0 18px; display: grid; gap: 12px; }
+.rv-steps li { color: var(--muted); font-size: 16px; line-height: 1.75; padding-left: 4px; }
+.rv-steps li::marker { color: var(--primary); font-weight: 800; }
+.rv-steps li strong { color: var(--ink); font-weight: 700; }
+
+/* Security tick list */
+.rv-ticklist { display: grid; gap: 12px; margin: 4px 0 18px; }
+.rv-ticklist li { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); font-size: 15.5px; line-height: 1.65; }
+.rv-ticklist .tick { margin-top: 1px; }
+
+/* Who Zephgain suits — two cards */
+.rv-fit { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 20px 0 2px; }
+.rv-fit-card { border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; background: #fff; box-shadow: var(--shadow-sm); }
+.rv-fit-card h3 { font-size: 15px; margin-bottom: 14px; }
+.rv-fit-card.good h3 { color: var(--green); }
+.rv-fit-card.no h3 { color: #C0392B; }
+.rv-fit-card ul { display: grid; gap: 10px; }
+.rv-fit-card li { display: flex; gap: 9px; align-items: flex-start; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+.rv-fit-card li::before { font-weight: 800; line-height: 1.4; flex: 0 0 auto; }
+.rv-fit-card.good li::before { content: '\2713'; color: var(--green); }
+.rv-fit-card.no li::before { content: '\2715'; color: #C0392B; }
+
+/* Risk warning card under the FAQ */
+.rv-risk { margin-top: 34px; display: flex; gap: 14px; align-items: flex-start; border: 1px solid rgba(192, 57, 43, .28); background: #FCF5F4; border-radius: var(--r-lg); padding: 18px 22px; }
+.rv-risk b { color: #C0392B; text-transform: uppercase; letter-spacing: .05em; font-size: 12.5px; flex: 0 0 auto; padding-top: 2px; }
+.rv-risk p { color: #7A4A44; font-size: 14.5px; line-height: 1.7; margin: 0; }
+
+@media (max-width: 640px) {
+  .rv-hero { padding: 48px 0 32px; }
+  .rv-body { padding: 28px 0 64px; }
+  .rv-sec { margin-top: 44px; }
+  .rv-sec h2 { font-size: 21px; }
+  .rv-glance-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 16px; }
+  .rv-fit { grid-template-columns: 1fr; }
+  .rv-risk { flex-direction: column; gap: 8px; padding: 16px 18px; }
+}
+
+/* Inbound-link helpers pointing at /zephgain-review */
+.faq-more { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(23, 91, 221, .35); }
+.faq-more:hover { color: var(--primary-dark); text-decoration-color: currentColor; }
+.about-story-copy .about-story-more { margin-top: 12px; }
+.terms-hero a, .ct-review-note a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(23, 91, 221, .35); }
+.terms-hero a:hover, .ct-review-note a:hover { color: var(--primary-dark); text-decoration-color: currentColor; }
+.ct-review-note { margin: 0 0 20px; font-size: 14.5px; color: var(--muted); line-height: 1.6; }

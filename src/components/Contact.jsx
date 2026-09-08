@@ -93,6 +93,10 @@ export default function Contact() {
           <div className="ct-form-card reveal">
             <h3>Register your interest</h3>
             <p className="ct-form-sub">Fill in your details and our team will be in touch to get you started.</p>
+            <p className="ct-review-note">
+              <a href="/zephgain-review">Check the Zephgain review first</a> — how the platform works, what it
+              costs, and what to watch for.
+            </p>
 
             <form className="ct-form" onSubmit={onSubmit}>
                 <div className="ct-row">

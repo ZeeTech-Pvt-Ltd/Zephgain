@@ -73,6 +73,7 @@ const story = [
     step: '05',
     title: 'Today',
     text: 'Now serving 4M+ registered users across 65+ currencies, Zephgain keeps growing every day — with the original mission unchanged: make automated trading accessible to everyone.',
+    more: { text: 'See our full platform review', href: '/zephgain-review' },
   },
 ]
 
@@ -105,7 +106,7 @@ export default function About() {
               <a className="btn btn-primary" href="/" data-scroll="#register">
                 Register Now <ArrowRight />
               </a>
-              <a className="btn btn-ghost" href="/how-it-works">How It Works</a>
+              <a className="btn btn-ghost" href="/" data-scroll="#how">How It Works</a>
             </div>
           </div>
 
@@ -204,6 +205,11 @@ export default function About() {
                   <span className="about-story-step">{s.step}</span>
                   <h3>{s.title}</h3>
                   <p>{s.text}</p>
+                  {s.more && (
+                    <a className="btn-link about-story-more" href={s.more.href}>
+                      {s.more.text} <ArrowRight size={16} />
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

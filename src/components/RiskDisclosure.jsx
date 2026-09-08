@@ -84,7 +84,10 @@ export default function RiskDisclosure() {
           <h1 className="h1">
             Risk <mark>Disclosure</mark>
           </h1>
-          <p className="lead">The risks you should understand before using the Zephgain platform.</p>
+          <p className="lead">
+            The risks you should understand before using the Zephgain platform. New to Zephgain? The{' '}
+            <a href="/zephgain-review">platform overview</a> explains the basics first.
+          </p>
           <span className="terms-updated">Last updated: 31 August 2026</span>
         </div>
       </section>

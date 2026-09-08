@@ -4,6 +4,7 @@ import Seo from './components/Seo.jsx'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Metrics from './components/Metrics.jsx'
+import WhatIsZephgain from './components/WhatIsZephgain.jsx'
 import HowItWorks from './components/HowItWorks.jsx'
 import Experience from './components/Experience.jsx'
 import Priorities from './components/Priorities.jsx'
@@ -26,20 +27,27 @@ const Contact = lazy(() => import('./components/Contact.jsx'))
 const Terms = lazy(() => import('./components/Terms.jsx'))
 const Privacy = lazy(() => import('./components/Privacy.jsx'))
 const RiskDisclosure = lazy(() => import('./components/RiskDisclosure.jsx'))
+const ZephgainReview = lazy(() => import('./components/ZephgainReview.jsx'))
 const NotFound = lazy(() => import('./components/NotFound.jsx'))
 const ThankYou = lazy(() => import('./components/ThankYou.jsx'))
 
 // Clean-path routing: "/" -> home, "/about" -> About, anything unknown -> 404.
 // Fragment anchors like "#register" keep working as in-page scroll links.
-const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you', 'how-it-works', 'why-invest']
+const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you', 'zephgain-review']
 
-// Legacy case-variant paths redirect to their canonical lowercase form
-// (the page used to live at /How-It-Works).
-const LEGACY_PATHS = { '/How-It-Works': '/how-it-works' }
+// Pages that were removed (each was a thin single-section page duplicating a
+// homepage section). Any stale link — a bookmark, an old search result, or an
+// older URL — now resolves to the homepage.
+const REMOVED_PAGES = { '/how-it-works': '/', '/why-invest': '/' }
+
+// Legacy case-variant paths redirect to their canonical form. The old
+// /How-It-Works casing routes home, since that page no longer exists.
+const LEGACY_PATHS = { '/How-It-Works': '/' }
 
 const getRoute = (path = location.pathname) => {
   const clean = path.split('?')[0].replace(/\/+$/, '')
   if (!clean || clean === '/') return 'home'
+  if (REMOVED_PAGES[clean]) return 'home'
   const first = LEGACY_PATHS[clean] ? LEGACY_PATHS[clean].slice(1) : clean.slice(1)
   return KNOWN_ROUTES.includes(first) ? first : '404'
 }
@@ -58,10 +66,11 @@ export default function App() {
     }
   }, [])
 
-  // Legacy case-variant paths (e.g. /How-It-Works) rewrite to lowercase in the URL bar.
+  // Legacy case-variants and removed pages rewrite the URL bar on load (and on
+  // direct visits), so a stale /how-it-works or /How-It-Works link ends on "/".
   useEffect(() => {
     const clean = location.pathname.replace(/\/+$/, '')
-    const target = LEGACY_PATHS[clean]
+    const target = LEGACY_PATHS[clean] || REMOVED_PAGES[clean]
     if (target) {
       history.replaceState(null, '', target)
       setRoute(getRoute())
@@ -133,7 +142,10 @@ export default function App() {
       if (/^(https?:)?\/\//i.test(href) || href.startsWith('mailto:') || href.startsWith('tel:')) return
 
       if (href.startsWith('/')) {
-        const next = getRoute(href)
+        // Stale links to removed pages (/how-it-works, /why-invest) go home.
+        const cleanHref = href.split('?')[0].replace(/\/+$/, '')
+        const target = REMOVED_PAGES[cleanHref] || href
+        const next = getRoute(target)
         if (next === route) {
           // Same page — just scroll to top, no reload.
           e.preventDefault()
@@ -141,7 +153,7 @@ export default function App() {
           return
         }
         e.preventDefault()
-        history.pushState(null, '', href)
+        history.pushState(null, '', target)
         setRoute(next)
         window.scrollTo(0, 0)
       }
@@ -178,14 +190,14 @@ export default function App() {
   if (route === 'privacy') return <Layout routeName="privacy"><Privacy /></Layout>
   if (route === 'disclosure') return <Layout routeName="disclosure"><RiskDisclosure /></Layout>
   if (route === 'thank-you') return <Layout routeName="thank-you"><ThankYou /></Layout>
-  if (route === 'how-it-works') return <Layout routeName="how-it-works"><HowItWorks asPage /></Layout>
-  if (route === 'why-invest') return <Layout routeName="why-invest"><Priorities asPage /></Layout>
+  if (route === 'zephgain-review') return <Layout routeName="zephgain-review"><ZephgainReview /></Layout>
   if (route === '404') return <Layout routeName="404"><NotFound /></Layout>
 
   return (
     <Layout routeName="home">
       <Hero />
       <Metrics />
+      <WhatIsZephgain />
       <HowItWorks />
       <Experience />
       <Priorities />

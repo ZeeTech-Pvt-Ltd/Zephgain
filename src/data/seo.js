@@ -5,7 +5,7 @@
 // cards, and JSON-LD structured data — consumed by <Seo/>.
 // Nothing here invents facts: all claims come from content.js.
 // =========================================================
-import { faq } from './content.js'
+import { faq, reviewFaq } from './content.js'
 
 const SITE = 'https://zephgain-au.com'
 export const OG_IMAGE = `${SITE}/og-image.png`
@@ -98,18 +98,34 @@ function breadcrumb(name, path) {
   }
 }
 
-// FAQ schema is generated from the same FAQ content rendered on the
-// homepage — never duplicated or invented.
-function faqPageSchema() {
+// FAQ schema is always generated from the same FAQ content that is rendered
+// on the page it describes — never duplicated or invented.
+function buildFaqPage(items) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faq.map((f) => ({
+    mainEntity: items.map((f) => ({
       '@type': 'Question',
       name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
+      // When an answer carries a trailing read-more link (item.link), the same
+      // sentence is appended here so the structured text matches the rendered
+      // answer exactly (anchor text only, no markup).
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.link ? `${f.a} ${f.link.text}` : f.a,
+      },
     })),
   }
+}
+
+// Homepage FAQ schema — mirrors the <Faq/> accordion on the home route.
+function faqPageSchema() {
+  return buildFaqPage(faq)
+}
+
+// /zephgain-review FAQ schema — mirrors the review page's own accordion.
+function reviewFaqPageSchema() {
+  return buildFaqPage(reviewFaq)
 }
 
 const homeDescription =
@@ -158,33 +174,20 @@ export const seo = {
     ],
   },
 
-  'how-it-works': {
-    title: 'How Zephgain Works — Get Started in 3 Easy Steps',
+  'zephgain-review': {
+    title: 'Zephgain Review 2026 — Fees, Safety & How It Works',
     description:
-      'Getting started with Zephgain takes about two minutes. Create your account, deposit from just AU$250, and let the AI trade around the clock — no hidden fees.',
-    keywords: 'how to start automated trading, Zephgain sign up, AI trading steps, automated trading for beginners',
-    canonical: `${SITE}/how-it-works`,
+      'An official Zephgain review for Australian traders: how the platform works, the AU$250 minimum deposit, withdrawal times, security, and the risks involved.',
+    keywords:
+      'zephgain review, is zephgain legit, zephgain minimum deposit, zephgain withdrawal, zephgain safe, zephgain review australia',
+    canonical: `${SITE}/zephgain-review`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
-    type: 'website',
-    ogImageAlt: 'How Zephgain works — create your account, deposit, and start automated trading',
+    type: 'article',
+    ogImageAlt: 'Zephgain review 2026 — fees, safety, and how the platform works for Australian traders',
     schema: [
-      webPage('How Zephgain Works', `${SITE}/how-it-works`, 'How to get started with Zephgain automated trading in three easy steps — create an account, deposit, and start trading.'),
-      breadcrumb('How It Works', '/how-it-works'),
-    ],
-  },
-
-  'why-invest': {
-    title: 'Why Invest with Zephgain — Security & Simplicity',
-    description:
-      'Why 4M+ verified users choose Zephgain — 95% cold storage, 2FA, 256-bit SSL, transparent pricing, and automated AI trading for every level.',
-    keywords: 'why invest with Zephgain, secure automated trading, Zephgain security, automated trading benefits',
-    canonical: `${SITE}/why-invest`,
-    robots: 'index, follow, max-image-preview:large, max-snippet:-1',
-    type: 'website',
-    ogImageAlt: 'Why invest with Zephgain — security, simplicity, and transparency',
-    schema: [
-      webPage('Why Invest with Zephgain', `${SITE}/why-invest`, 'Why traders choose Zephgain — security, simplicity, and transparency in automated AI trading.'),
-      breadcrumb('Why Invest', '/why-invest'),
+      webPage('Zephgain Review', `${SITE}/zephgain-review`, 'An official Zephgain review for Australian traders — how the platform works, the AU$250 minimum deposit, withdrawal times, security, and the risks involved.'),
+      breadcrumb('Zephgain Review', '/zephgain-review'),
+      reviewFaqPageSchema(),
     ],
   },
 

@@ -5,8 +5,7 @@
 export const nav = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Why Invest', href: '/why-invest' },
+  { label: 'Review', href: '/zephgain-review' },
   { label: 'FAQ', href: '/', scroll: '#faq' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -138,6 +137,7 @@ export const priorities = {
       items: ['A 3-click path to your first trade', 'Automated AI trading assistant', 'An interface that suits every user level'],
       tags: ['AI-Powered'],
     },
+    // Third card (Transparency).
     {
       big: '0', cap: 'hidden fees',
       title: 'Transparency', sub: 'No surprises, ever',
@@ -219,6 +219,7 @@ export const faq = [
   {
     q: 'Is Zephgain Legit?',
     a: 'Yes. Zephgain is an AI-powered trading platform with a community score of 4.8 out of 5 based on 1,247 independent reviews. Every trade, signal, and performance figure is visible in real time, and traders across Australia use the platform daily for fast execution.',
+    link: { text: 'Read the full Zephgain review', href: '/zephgain-review' },
   },
   {
     q: 'How Much Do I Need to Start Trading on Zephgain?',
@@ -242,6 +243,36 @@ export const faq = [
   },
 ]
 
+// FAQ shown on the /zephgain-review page. Single source of truth — the same
+// Q&A pairs feed both the rendered accordion and the FAQPage JSON-LD in
+// src/data/seo.js, so the structured data never drifts from the page copy.
+export const reviewFaq = [
+  {
+    q: 'Is Zephgain available outside Australia?',
+    a: 'No. Access is currently limited to verified residents of Australia.',
+  },
+  {
+    q: 'What is the Zephgain minimum deposit?',
+    a: 'AU$250. There are no subscription fees, registration costs, or hidden charges on top of it.',
+  },
+  {
+    q: 'How long does a Zephgain withdrawal take?',
+    a: 'Most requests are processed within 24 hours and returned through the channel you deposited with. Your bank may add its own processing time.',
+  },
+  {
+    q: 'Do I have to use the automated mode?',
+    a: 'No. You can trade manually at any time, or switch between manual and automated as you prefer.',
+  },
+  {
+    q: 'Does Zephgain give investment advice?',
+    a: 'No. Zephgain provides technology and information tools. AI signals and analysis are for information only and are not personal financial advice.',
+  },
+  {
+    q: 'How do I know I am on the real Zephgain site?',
+    a: 'Our only official Australian domain is zephgain-au.com. Lookalike sites exist and are not connected to us.',
+  },
+]
+
 export const capabilities = [
   { k: 'Platform Technology', v: 'AI-Powered Trading Technology' },
   { k: 'Funding Methods', v: 'Credit Cards, Bank Transfers, PayPal' },
@@ -258,8 +289,7 @@ export const footer = {
   company: [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
-    { label: 'How It Works', href: '/how-it-works' },
-    { label: 'Why Invest', href: '/why-invest' },
+    { label: 'Review', href: '/zephgain-review' },
     { label: 'FAQ', href: '/', scroll: '#faq' },
     { label: 'Contact Us', href: '/contact' },
   ],
