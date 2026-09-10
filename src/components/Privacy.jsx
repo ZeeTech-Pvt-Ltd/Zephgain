@@ -1,4 +1,4 @@
-// Privacy Notice — layout follows the gemwealth-holm privacy reference; all copy
+// Privacy Notice - layout follows the gemwealth-holm privacy reference; all copy
 // is rewritten for Zephgain in its own words. Brand colors/fonts unchanged.
 // Reuses the shared legal-page styles (.terms-*) from index.css.
 const sections = [

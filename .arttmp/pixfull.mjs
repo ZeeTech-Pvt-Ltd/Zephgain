@@ -33,7 +33,7 @@ async function main() {
   const res = await send('Runtime.evaluate', {
     expression: `(async () => {
       const img = new Image()
-      img.src = '/debug-rect-full.png'  // served from public? no — try local path via fetch blob
+      img.src = '/debug-rect-full.png'  // served from public? no - try local path via fetch blob
       await new Promise((res, rej) => { img.onload = res; img.onerror = () => rej(new Error('load fail')) })
       const c = document.createElement('canvas')
       c.width = img.width; c.height = img.height

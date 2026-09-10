@@ -1,4 +1,4 @@
-// Headless form verification via CDP — name row, phone code+flag, payment logos
+// Headless form verification via CDP - name row, phone code+flag, payment logos
 import { spawn } from 'node:child_process'
 import { mkdirSync } from 'node:fs'
 
@@ -57,7 +57,7 @@ async function main() {
     return r.result?.result?.value
   }
 
-  // ——— layout checks (desktop) ———
+  // --- layout checks (desktop) ---
   const layout = await evalJs(`(() => {
     const $ = (s) => document.querySelector(s)
     const rect = (s) => { const el = $(s); if (!el) return null; const r = el.getBoundingClientRect(); return { x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.width), h: Math.round(r.height) } }
@@ -85,7 +85,7 @@ async function main() {
   const chipW = await evalJs(`(() => [...document.querySelectorAll('.pay')].map((c) => Math.round(c.getBoundingClientRect().width)))()`)
   console.log('CHIP WIDTHS:', JSON.stringify(chipW))
 
-  // ——— validation still works ———
+  // --- validation still works ---
   const submitResult = await evalJs(`(async () => {
     const f = document.querySelector('#regForm')
     f.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))
@@ -100,13 +100,13 @@ async function main() {
   })()`)
   console.log('VALIDATION:', JSON.stringify(submitResult))
 
-  // ——— screenshot (desktop, form section) ———
+  // --- screenshot (desktop, form section) ---
   const cap = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false })
   mkdirSync('.verify', { recursive: true })
   const { writeFileSync } = await import('node:fs')
   writeFileSync('.verify/form-desktop.png', Buffer.from(cap.result.data, 'base64'))
 
-  // ——— mobile 375 ———
+  // --- mobile 375 ---
   await send('Emulation.setDeviceMetricsOverride', { width: 375, height: 812, deviceScaleFactor: 2, mobile: true })
   await wait(800)
   const mob = await evalJs(`(() => {

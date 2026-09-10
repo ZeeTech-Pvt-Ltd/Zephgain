@@ -4,7 +4,7 @@ import { seo, OG_IMAGE } from '../data/seo.js'
 const SITE = 'https://zephgain-au.com'
 
 /**
- * Seo — per-route head management for the Zephgain SPA.
+ * Seo - per-route head management for the Zephgain SPA.
  *
  * Syncs <title>, meta description/keywords/robots, canonical link,
  * Open Graph + Twitter tags, and JSON-LD structured data into

@@ -1,4 +1,4 @@
-// Original mobile-mockup visual — a phone showing a trading chart on screen.
+// Original mobile-mockup visual - a phone showing a trading chart on screen.
 // Built from scratch in Zephgain's brand colours; only the generic
 // device-mockup / trading-graphic style is used as inspiration, no
 // third-party artwork is copied. Each variant shows a different chart stage

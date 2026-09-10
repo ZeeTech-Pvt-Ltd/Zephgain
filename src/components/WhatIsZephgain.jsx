@@ -1,6 +1,6 @@
-// What is Zephgain? — plain definitional block between the stats strip and
+// What is Zephgain? - plain definitional block between the stats strip and
 // How-it-works. Rendered eagerly on the homepage (no lazy mount) and without a
-// .reveal class so the text is visible on first paint — nothing hides it.
+// .reveal class so the text is visible on first paint - nothing hides it.
 export default function WhatIsZephgain() {
   return (
     <section className="section whatis">
@@ -17,7 +17,7 @@ export default function WhatIsZephgain() {
           <p>
             The platform is built for traders who want market exposure without reading
             charts all day. You keep full control of your account and can withdraw at any
-            time. Zephgain provides technology and information tools only — it does not
+            time. Zephgain provides technology and information tools only - it does not
             give personal financial advice.
           </p>
         </div>

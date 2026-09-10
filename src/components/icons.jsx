@@ -31,7 +31,7 @@ export function ChevronDown({ size = 20, className = '' }) {
   )
 }
 
-// Feature / step icons — pick by name via <Icon name="...">
+// Feature / step icons - pick by name via <Icon name="...">
 export function Icon({ name, size = 26, className = '' }) {
   const common = { width: size, height: size, viewBox: '0 0 24 24', ...stroke, className }
   switch (name) {

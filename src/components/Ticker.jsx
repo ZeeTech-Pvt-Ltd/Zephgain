@@ -1,4 +1,4 @@
-// Live market ticker — pure CSS marquee, duplicated once for a seamless loop
+// Live market ticker - pure CSS marquee, duplicated once for a seamless loop
 const items = [
   { sym: 'BTC/USD', price: '61,248', chg: '+2.4%', up: true },
   { sym: 'ETH/USD', price: '3,412', chg: '+1.8%', up: true },

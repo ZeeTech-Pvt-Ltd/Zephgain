@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 /**
- * useScrollSpy — returns the id of the section currently in view.
+ * useScrollSpy - returns the id of the section currently in view.
  * Pass the array of section ids to spy on.
  */
 export default function useScrollSpy(ids) {

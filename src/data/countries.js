@@ -1,4 +1,4 @@
-// Full country list for the phone picker — [isoCode, countryName, dialCode]
+// Full country list for the phone picker - [isoCode, countryName, dialCode]
 // Mirrors the intl-tel-input country data used on the reference site.
 export const countries = [
   ['AF', 'Afghanistan', 93],

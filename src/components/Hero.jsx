@@ -42,7 +42,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Registration form — kept identical in flow to zephgain.com */}
+        {/* Registration form - kept identical in flow to zephgain.com */}
         <div className="form-wrap reveal">
           <div className="form-ring"></div>
 

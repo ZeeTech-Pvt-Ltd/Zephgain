@@ -1,12 +1,12 @@
 // Original trading-dashboard visual, recreated from scratch in Zephgain's
 // brand colours. Only the general trading/fintech graphic style (area charts,
-// candlesticks, market stat chips) is used as inspiration — no third-party
+// candlesticks, market stat chips) is used as inspiration - no third-party
 // artwork is copied. All colours come from the site's CSS variables.
 const line =
   'M0 170 C52 154 88 124 132 132 C168 138 198 100 240 92 C282 84 314 110 352 90 C388 72 420 46 462 40 C498 34 530 40 560 24'
 const area = `${line} L560 212 L0 212 Z`
 
-// Candlestick strip — each bar is {up, body top/height, wick top/height} in px.
+// Candlestick strip - each bar is {up, body top/height, wick top/height} in px.
 const candles = [
   { up: true, bT: 30, bH: 14, wT: 26, wH: 22 },
   { up: false, bT: 26, bH: 12, wT: 22, wH: 20 },

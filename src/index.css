@@ -1,5 +1,5 @@
 /* =========================================================
-   Zephgain AU — design system (palette follows zephgain.com)
+   Zephgain AU - design system (palette follows zephgain.com)
    ========================================================= */
 :root {
   --primary: #175BDD;
@@ -230,7 +230,7 @@ body.menu-open { overflow: hidden; }
 .field.error .error-msg { display: block; }
 .field.error .input { border-color: #D64545; }
 
-/* phone — combined field: [ flag + code | number ] in one input */
+/* phone - combined field: [ flag + code | number ] in one input */
 .pn-wrap {
   position: relative;
   display: flex; align-items: stretch;
@@ -397,7 +397,7 @@ body.menu-open { overflow: hidden; }
   background: radial-gradient(52rem 36rem at 90% -5%, rgba(38, 121, 255, .08), transparent 60%),
     linear-gradient(180deg, #F3F8FF 0%, #FFFFFF 100%);
 }
-/* Base styles are SHARED with the Portfolio card — keep them generic. */
+/* Base styles are SHARED with the Portfolio card - keep them generic. */
 .exp-row { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 46px; }
 .exp-row + .exp-row { margin-top: 72px; }
 .exp-row.reverse .exp-visual { order: -1; }
@@ -433,7 +433,7 @@ body.menu-open { overflow: hidden; }
 .exp-badge.b2 { top: -16px; right: -6px; }
 .exp-badge.b3 { bottom: -12px; right: 16px; }
 
-/* Experience redesign — bigger dashboard-style visuals, scoped to THIS section
+/* Experience redesign - bigger dashboard-style visuals, scoped to THIS section
    so the Portfolio card keeps its original look. */
 .exp-sec .exp-row { grid-template-columns: 1fr 1.1fr; align-items: center; gap: 56px; }
 .exp-sec .section-head { margin-bottom: 56px; }
@@ -478,7 +478,7 @@ body.menu-open { overflow: hidden; }
 .exp-sec .exp-points .tick { width: 21px; height: 21px; margin-top: 1px; }
 .exp-sec .exp-points .tick svg { display: block; }
 
-/* Portfolio management visual — enlarged to match the platform cards */
+/* Portfolio management visual - enlarged to match the platform cards */
 .feat-duo .exp-visual { width: 100%; }
 .feat-duo .exp-card { max-width: 560px; padding: 26px 28px 28px; border-radius: 20px; box-shadow: 0 20px 50px rgba(23, 91, 221, .13); }
 .feat-duo .mini-label { font-size: 14px; }
@@ -573,7 +573,7 @@ body.menu-open { overflow: hidden; }
 .tst-person .verified { font-size: 12.5px; color: var(--green); font-weight: 600; }
 .tst-summary {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px;
-  margin-top: 34px; padding: 18px 26px; /* border aur shadow hata diye — flat, clean */
+  margin-top: 34px; padding: 18px 26px; /* border aur shadow hata diye - flat, clean */
 }
 .tst-summary .big { font-size: 40px; font-weight: 800; color: var(--primary); }
 .tst-summary .row { display: flex; align-items: center; gap: 12px; }
@@ -686,7 +686,7 @@ body.menu-open { overflow: hidden; }
 .ticker-item em.down { color: #C0392B; }
 @keyframes tickerX { to { transform: translateX(-50%); } }
 
-/* card top accent on hover — rounded pill */
+/* card top accent on hover - rounded pill */
 .step, .feat-card, .prio-card, .tst-card { position: relative; }
 .step::before, .feat-card::before, .prio-card::before, .tst-card::before {
   content: ""; position: absolute; top: -3px; left: 50%; width: 72%;
@@ -721,9 +721,9 @@ body.menu-open { overflow: hidden; }
     radial-gradient(30rem 22rem at 0% 100%, rgba(143, 196, 115, .08), transparent 60%);
 }
 .feat { background: radial-gradient(44rem 30rem at -10% 0%, rgba(38, 121, 255, .06), transparent 60%); }
-/* Portfolio management section — pure white (sirf #portfolio wala section) */
+/* Portfolio management section - pure white (sirf #portfolio wala section) */
 #portfolio { background: #fff; }
-/* "Built to perform" (Features) — halka blue tint, separate-section feel */
+/* "Built to perform" (Features) - halka blue tint, separate-section feel */
 #features {
   background:
     radial-gradient(44rem 30rem at 110% 0%, rgba(38, 121, 255, .07), transparent 60%),
@@ -768,7 +768,7 @@ html.js .reveal[data-revealed] { opacity: 1; transform: none; }
 .about-chip.one { top: -10px; left: -45px; }
 .about-chip.two { bottom: 26px; right: -45px; }
 
-/* Trading visual (About hero) — original SVG/CSS dashboard in brand colours */
+/* Trading visual (About hero) - original SVG/CSS dashboard in brand colours */
 .about-visual .tv-card {
   position: relative; width: 100%; border-radius: 22px; border: 1px solid var(--line);
   background: #fff; box-shadow: var(--shadow-lg); padding: 20px 22px 18px;
@@ -849,7 +849,7 @@ html.js .reveal[data-revealed] { opacity: 1; transform: none; }
 .about-story { display: grid; gap: 48px; max-width: 980px; margin-inline: auto; }
 .about-story-row { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
 .about-story-row.reverse .about-story-media { order: 2; }
-/* About story imagery — real photos in a branded 16:10 frame.
+/* About story imagery - real photos in a branded 16:10 frame.
    A photo is expected at /about/story-N.jpg; if one is missing the
    large step number shows as a graceful branded placeholder. */
 .about-story-media {
@@ -1096,7 +1096,7 @@ html.js .reveal[data-revealed] { opacity: 1; transform: none; }
 .rv-ticklist li { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); font-size: 15.5px; line-height: 1.65; }
 .rv-ticklist .tick { margin-top: 1px; }
 
-/* Who Zephgain suits — two cards */
+/* Who Zephgain suits - two cards */
 .rv-fit { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 20px 0 2px; }
 .rv-fit-card { border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; background: #fff; box-shadow: var(--shadow-sm); }
 .rv-fit-card h3 { font-size: 15px; margin-bottom: 14px; }

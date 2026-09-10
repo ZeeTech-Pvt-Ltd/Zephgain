@@ -2,7 +2,7 @@
 // Per-route SEO configuration for Zephgain.
 // Single source of truth for <title>, meta description, meta
 // keywords, canonical URLs, robots rules, Open Graph, Twitter
-// cards, and JSON-LD structured data — consumed by <Seo/>.
+// cards, and JSON-LD structured data - consumed by <Seo/>.
 // Nothing here invents facts: all claims come from content.js.
 // =========================================================
 import { faq, reviewFaq } from './content.js'
@@ -20,7 +20,7 @@ const organization = {
   url: SITE,
   logo: `${SITE}/favicon.svg`,
   description:
-    'Zephgain is an AI-powered automated trading platform for users in Australia — automated strategies, live market signals, and dependable security in one place.',
+    'Zephgain is an AI-powered automated trading platform for users in Australia - automated strategies, live market signals, and dependable security in one place.',
   email: 'support@zephgain-au.com',
   inLanguage: 'en-AU',
   areaServed: 'Australia',
@@ -39,7 +39,7 @@ const organization = {
   },
 }
 
-// The platform described as a schema.org Service, geo-scoped to Australia —
+// The platform described as a schema.org Service, geo-scoped to Australia -
 // all fields reflect claims already on the site (Melbourne base, 24/7
 // support, AU$250 minimum deposit), nothing invented.
 function serviceSchema() {
@@ -50,7 +50,7 @@ function serviceSchema() {
     name: 'Zephgain Automated Trading Platform',
     serviceType: 'Automated trading platform',
     description:
-      'AI-powered automated trading platform for users in Australia — automated strategies, live market signals, and dependable security in one place.',
+      'AI-powered automated trading platform for users in Australia - automated strategies, live market signals, and dependable security in one place.',
     provider: { '@id': `${SITE}/#organization` },
     areaServed: 'Australia',
     audience: { '@type': 'Audience', audienceType: 'Traders in Australia' },
@@ -99,7 +99,7 @@ function breadcrumb(name, path) {
 }
 
 // FAQ schema is always generated from the same FAQ content that is rendered
-// on the page it describes — never duplicated or invented.
+// on the page it describes - never duplicated or invented.
 function buildFaqPage(items) {
   return {
     '@context': 'https://schema.org',
@@ -118,64 +118,64 @@ function buildFaqPage(items) {
   }
 }
 
-// Homepage FAQ schema — mirrors the <Faq/> accordion on the home route.
+// Homepage FAQ schema - mirrors the <Faq/> accordion on the home route.
 function faqPageSchema() {
   return buildFaqPage(faq)
 }
 
-// /zephgain-review FAQ schema — mirrors the review page's own accordion.
+// /zephgain-review FAQ schema - mirrors the review page's own accordion.
 function reviewFaqPageSchema() {
   return buildFaqPage(reviewFaq)
 }
 
 const homeDescription =
-  'Zephgain — AI-powered automated trading platform for Australia. 24/7 automated strategies, live signals, bank-grade security. Start with just AU$250.'
+  'Zephgain - AI-powered automated trading platform for Australia. 24/7 automated strategies, live signals, bank-grade security. Start with just AU$250.'
 
 export const seo = {
   home: {
-    title: 'Zephgain — AI-Powered Automated Trading Platform in Australia',
+    title: 'Zephgain - AI-Powered Automated Trading Platform in Australia',
     description: homeDescription,
     keywords:
       'automated trading platform australia, AI trading platform, automated crypto trading, Zephgain, AI trading Australia',
     canonical: `${SITE}/`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
-    ogImageAlt: 'Zephgain — AI-powered automated trading platform for Australia',
-    schema: [organization, website, webPage('Zephgain — AI-Powered Automated Trading Platform in Australia', `${SITE}/`, homeDescription), faqPageSchema(), serviceSchema()],
+    ogImageAlt: 'Zephgain - AI-powered automated trading platform for Australia',
+    schema: [organization, website, webPage('Zephgain - AI-Powered Automated Trading Platform in Australia', `${SITE}/`, homeDescription), faqPageSchema(), serviceSchema()],
   },
 
   about: {
-    title: 'About Zephgain — Automated Trading Without the Complexity',
+    title: 'About Zephgain - Automated Trading Without the Complexity',
     description:
-      'Learn about Zephgain, the AI trading platform trusted by 4M+ users — automated analysis, bank-grade security, and 24/7 support for Australian traders.',
+      'Learn about Zephgain, the AI trading platform trusted by 4M+ users - automated analysis, bank-grade security, and 24/7 support for Australian traders.',
     keywords: 'about Zephgain, Zephgain trading platform, automated trading platform australia, AI trading company',
     canonical: `${SITE}/about`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
-    ogImageAlt: 'About Zephgain — automated trading without the complexity',
+    ogImageAlt: 'About Zephgain - automated trading without the complexity',
     schema: [
-      webPage('About Zephgain', `${SITE}/about`, 'About the Zephgain AI-driven automated trading platform — automated market analysis, bank-grade security, and 24/7 support.'),
+      webPage('About Zephgain', `${SITE}/about`, 'About the Zephgain AI-driven automated trading platform - automated market analysis, bank-grade security, and 24/7 support.'),
       breadcrumb('About Us', '/about'),
     ],
   },
 
   contact: {
-    title: 'Contact Zephgain — 24/7 Support for Australian Traders',
+    title: 'Contact Zephgain - 24/7 Support for Australian Traders',
     description:
-      'Have a question about Zephgain or automated trading? Contact our 24/7 support team by email or the registration form — we usually reply within a few hours.',
+      'Have a question about Zephgain or automated trading? Contact our 24/7 support team by email or the registration form - we usually reply within a few hours.',
     keywords: 'contact Zephgain, Zephgain support, automated trading help, Zephgain Australia support',
     canonical: `${SITE}/contact`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
-    ogImageAlt: 'Contact Zephgain support — 24/7 assistance for Australian traders',
+    ogImageAlt: 'Contact Zephgain support - 24/7 assistance for Australian traders',
     schema: [
-      webPage('Contact Zephgain', `${SITE}/contact`, 'Contact the Zephgain support team — email and registration form, available around the clock.'),
+      webPage('Contact Zephgain', `${SITE}/contact`, 'Contact the Zephgain support team - email and registration form, available around the clock.'),
       breadcrumb('Contact Us', '/contact'),
     ],
   },
 
   'zephgain-review': {
-    title: 'Zephgain Review 2026 — Fees, Safety & How It Works',
+    title: 'Zephgain Review 2026 - Fees, Safety & How It Works',
     description:
       'An official Zephgain review for Australian traders: how the platform works, the AU$250 minimum deposit, withdrawal times, security, and the risks involved.',
     keywords:
@@ -183,79 +183,79 @@ export const seo = {
     canonical: `${SITE}/zephgain-review`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'article',
-    ogImageAlt: 'Zephgain review 2026 — fees, safety, and how the platform works for Australian traders',
+    ogImageAlt: 'Zephgain review 2026 - fees, safety, and how the platform works for Australian traders',
     schema: [
-      webPage('Zephgain Review', `${SITE}/zephgain-review`, 'An official Zephgain review for Australian traders — how the platform works, the AU$250 minimum deposit, withdrawal times, security, and the risks involved.'),
+      webPage('Zephgain Review', `${SITE}/zephgain-review`, 'An official Zephgain review for Australian traders - how the platform works, the AU$250 minimum deposit, withdrawal times, security, and the risks involved.'),
       breadcrumb('Zephgain Review', '/zephgain-review'),
       reviewFaqPageSchema(),
     ],
   },
 
   terms: {
-    title: 'Terms of Use — Zephgain Automated Trading Platform',
+    title: 'Terms of Use - Zephgain Automated Trading Platform',
     description:
-      'Read the Zephgain Terms of Use — the rules that govern use of the Zephgain AI-powered automated trading platform and its services for users in Australia.',
+      'Read the Zephgain Terms of Use - the rules that govern use of the Zephgain AI-powered automated trading platform and its services for users in Australia.',
     keywords: 'Zephgain terms of use, automated trading terms, platform terms',
     canonical: `${SITE}/terms`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
     ogImageAlt: 'Zephgain terms of use',
     schema: [
-      webPage('Terms of Use', `${SITE}/terms`, 'The Zephgain Terms of Use — the rules governing use of the platform.'),
+      webPage('Terms of Use', `${SITE}/terms`, 'The Zephgain Terms of Use - the rules governing use of the platform.'),
       breadcrumb('Terms of Use', '/terms'),
     ],
   },
 
   privacy: {
-    title: 'Privacy Policy — Zephgain Automated Trading Platform',
+    title: 'Privacy Policy - Zephgain Automated Trading Platform',
     description:
-      'Read the Zephgain Privacy Policy — how Zephgain collects, uses, and protects your personal information on the automated trading platform.',
+      'Read the Zephgain Privacy Policy - how Zephgain collects, uses, and protects your personal information on the automated trading platform.',
     keywords: 'Zephgain privacy policy, data protection, trading platform privacy',
     canonical: `${SITE}/privacy`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
     ogImageAlt: 'Zephgain privacy policy',
     schema: [
-      webPage('Privacy Policy', `${SITE}/privacy`, 'The Zephgain Privacy Policy — how personal information is collected and protected.'),
+      webPage('Privacy Policy', `${SITE}/privacy`, 'The Zephgain Privacy Policy - how personal information is collected and protected.'),
       breadcrumb('Privacy Policy', '/privacy'),
     ],
   },
 
   disclosure: {
-    title: 'Risk Disclosure — Zephgain Automated Trading Platform',
+    title: 'Risk Disclosure - Zephgain Automated Trading Platform',
     description:
-      'Read the Zephgain Risk Disclosure — important information about the risks of trading FX, CFDs, and cryptocurrencies on the automated trading platform.',
+      'Read the Zephgain Risk Disclosure - important information about the risks of trading FX, CFDs, and cryptocurrencies on the automated trading platform.',
     keywords: 'Zephgain risk disclosure, trading risk warning, CFD crypto risk',
     canonical: `${SITE}/disclosure`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
     ogImageAlt: 'Zephgain risk disclosure',
     schema: [
-      webPage('Risk Disclosure', `${SITE}/disclosure`, 'The Zephgain Risk Disclosure — information about the risks of trading FX, CFDs, and cryptocurrencies.'),
+      webPage('Risk Disclosure', `${SITE}/disclosure`, 'The Zephgain Risk Disclosure - information about the risks of trading FX, CFDs, and cryptocurrencies.'),
       breadcrumb('Risk Disclosure', '/disclosure'),
     ],
   },
 
   'thank-you': {
-    title: 'Thank You — Zephgain Registration',
+    title: 'Thank You - Zephgain Registration',
     description:
       'Your Zephgain registration has been received. Our team will review your details and contact you shortly to activate your account.',
     keywords: '',
     canonical: `${SITE}/thank-you`,
     robots: 'noindex, nofollow',
     type: 'website',
-    ogImageAlt: 'Thank you — Zephgain registration',
+    ogImageAlt: 'Thank you - Zephgain registration',
     schema: [],
   },
 
   404: {
-    title: 'Page Not Found — Zephgain',
+    title: 'Page Not Found - Zephgain',
     description: "The page you're looking for doesn't exist or has been moved. Return to the Zephgain homepage or contact support.",
     keywords: '',
-    canonical: null, // 404 page carries no canonical — it is noindexed
+    canonical: null, // 404 page carries no canonical - it is noindexed
     robots: 'noindex, nofollow',
     type: 'website',
-    ogImageAlt: 'Page not found — Zephgain',
+    ogImageAlt: 'Page not found - Zephgain',
     schema: [],
   },
 }

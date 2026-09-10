@@ -1,5 +1,5 @@
 // =========================================================
-// Central content file — edit all copy in one place
+// Central content file - edit all copy in one place
 // =========================================================
 
 export const nav = [
@@ -14,7 +14,7 @@ export const hero = {
   eyebrow: '🇦🇺 Chosen by traders across Australia',
   title: 'Zephgain',
   titleMark: 'Automated Trading Platform',
-  lead: 'Zephgain is the smart trading platform for Australia — AI-powered strategies, live market signals, and dependable security, all in one straightforward place.',
+  lead: 'Zephgain is the smart trading platform for Australia - AI-powered strategies, live market signals, and dependable security, all in one straightforward place.',
   checks: [
     'AI strategies that trade for you, around the clock',
     'Live market tracking and alerts, day and night',
@@ -39,14 +39,14 @@ export const steps = [
     no: 'STEP 1',
     icon: 'user',
     title: 'Create Your Account',
-    text: 'Getting started only takes a few minutes. Enter your name, email, and phone number, and your account is ready — protected by two-factor authentication from the moment it is created.',
+    text: 'Getting started only takes a few minutes. Enter your name, email, and phone number, and your account is ready - protected by two-factor authentication from the moment it is created.',
     cta: 'Start now',
   },
   {
     no: 'STEP 2',
     icon: 'wallet',
     title: 'Deposit Funds',
-    text: 'Begin with as little as AU$250. We support credit and debit cards, bank transfers, and leading e-wallets, and deposits reach your account within minutes — no waiting around, no hidden charges.',
+    text: 'Begin with as little as AU$250. We support credit and debit cards, bank transfers, and leading e-wallets, and deposits reach your account within minutes - no waiting around, no hidden charges.',
     cta: 'Deposit now',
     green: true,
   },
@@ -54,7 +54,7 @@ export const steps = [
     no: 'STEP 3',
     icon: 'chart',
     title: 'Start Trading',
-    text: 'Let the AI trade fully automatically, or take the manual route — the decision is yours. The platform watches the markets 24/7, places trades on your behalf when automated mode is on, and keeps your balance up to date in real time.',
+    text: 'Let the AI trade fully automatically, or take the manual route - the decision is yours. The platform watches the markets 24/7, places trades on your behalf when automated mode is on, and keeps your balance up to date in real time.',
     cta: 'Get started',
   },
 ]
@@ -107,7 +107,7 @@ export const experience = {
     },
     {
       title: 'Convenient and Reliable Management',
-      text: 'Your dashboard puts everything in one place — trades, performance, and signals — so you always know exactly where you stand. That clarity is part of what makes Zephgain a platform you can rely on.',
+      text: 'Your dashboard puts everything in one place - trades, performance, and signals - so you always know exactly where you stand. That clarity is part of what makes Zephgain a platform you can rely on.',
       points: [
         'Trades, performance, and signals in one dashboard',
         'Withdraw your funds whenever you choose',
@@ -123,7 +123,7 @@ export const priorities = {
   eyebrow: 'Why Zephgain',
   title: 'Our ',
   titleMark: 'priorities',
-  lead: 'Security, ease of use, and openness — at every step.',
+  lead: 'Security, ease of use, and openness - at every step.',
   cards: [
     {
       big: '95%', cap: 'cold storage',
@@ -165,7 +165,7 @@ export const features = [
 export const precision = [
   {
     icon: 'lock', title: 'Smart Algorithms for Smarter Trading',
-    text: 'Advanced AI scans live market data and surfaces emerging trends on your behalf — across Bitcoin, Ethereum, stocks, and forex.',
+    text: 'Advanced AI scans live market data and surfaces emerging trends on your behalf - across Bitcoin, Ethereum, stocks, and forex.',
   },
   {
     icon: 'zap', title: 'Fast Execution, Precise Timing', green: true,
@@ -192,7 +192,7 @@ export const testimonials = {
       name: 'Megan Hartley', initials: 'MH', verified: 'Verified trade',
     },
     {
-      quote: "The speed of the platform stood out to me immediately, and withdrawals have been smooth — each step is confirmed clearly before it goes through.",
+      quote: "The speed of the platform stood out to me immediately, and withdrawals have been smooth - each step is confirmed clearly before it goes through.",
       name: 'Callum Whitford', initials: 'CW', verified: 'Verified trade',
     },
   ],
@@ -206,7 +206,7 @@ export const portfolio = {
   title: 'Manage Your ',
   titleMark: 'Portfolio with Data-Driven',
   titleEnd: ' Trading',
-  lead: 'Through the official Zephgain platform, traders in Australia get a clean, data-first trading experience — real-time performance tracking and tools that are simple to understand and use.',
+  lead: 'Through the official Zephgain platform, traders in Australia get a clean, data-first trading experience - real-time performance tracking and tools that are simple to understand and use.',
   checks: [
     'Live performance analytics',
     'Straightforward guidance at every step',
@@ -223,7 +223,7 @@ export const faq = [
   },
   {
     q: 'How Much Do I Need to Start Trading on Zephgain?',
-    a: 'A minimum deposit of AU$250 activates your trading account — with no subscription fees, hidden charges, or registration costs. Start small and grow at a pace that suits you.',
+    a: 'A minimum deposit of AU$250 activates your trading account - with no subscription fees, hidden charges, or registration costs. Start small and grow at a pace that suits you.',
   },
   {
     q: 'How Secure Are My Money and Data on Zephgain?',
@@ -231,7 +231,7 @@ export const faq = [
   },
   {
     q: 'What Payment Methods Can I Use to Withdraw?',
-    a: 'Withdrawals follow the same channels as your deposit — including major credit cards, bank transfers, and PayPal. Most requests are processed within 24 hours.',
+    a: 'Withdrawals follow the same channels as your deposit - including major credit cards, bank transfers, and PayPal. Most requests are processed within 24 hours.',
   },
   {
     q: 'How Does Zephgain Maintain Transparency?',
@@ -239,11 +239,11 @@ export const faq = [
   },
   {
     q: 'Why Are There So Many Copycat Versions of Your Platform Online?',
-    a: "Our platform's popularity has made it a target for bad actors who build lookalike (scam) sites to mislead visitors. Always double-check that you are on the official domain — zephgain-au.com.",
+    a: "Our platform's popularity has made it a target for bad actors who build lookalike (scam) sites to mislead visitors. Always double-check that you are on the official domain - zephgain-au.com.",
   },
 ]
 
-// FAQ shown on the /zephgain-review page. Single source of truth — the same
+// FAQ shown on the /zephgain-review page. Single source of truth - the same
 // Q&A pairs feed both the rendered accordion and the FAQPage JSON-LD in
 // src/data/seo.js, so the structured data never drifts from the page copy.
 export const reviewFaq = [
@@ -285,7 +285,7 @@ export const capabilities = [
 ]
 
 export const footer = {
-  blurb: 'Zephgain is an AI-driven automated trading platform for users in Australia — automated strategies, live market insights, and dependable security in one place.',
+  blurb: 'Zephgain is an AI-driven automated trading platform for users in Australia - automated strategies, live market insights, and dependable security in one place.',
   company: [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },

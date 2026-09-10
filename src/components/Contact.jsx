@@ -61,7 +61,7 @@ export default function Contact() {
           </h1>
           <p className="lead">
             Have a question about Zephgain, your account, or automated trading? Our team is available around the
-            clock — reach out and we&rsquo;ll get back to you quickly.
+            clock - reach out and we&rsquo;ll get back to you quickly.
           </p>
         </div>
       </section>
@@ -73,7 +73,7 @@ export default function Contact() {
             <span className="eyebrow">Get in touch</span>
             <h2 className="h2">How to reach us</h2>
             <p className="lead">
-              Pick whichever channel works best for you — email, or the message form on this page.
+              Pick whichever channel works best for you - email, or the message form on this page.
             </p>
 
             <div className="ct-cards">
@@ -94,7 +94,7 @@ export default function Contact() {
             <h3>Register your interest</h3>
             <p className="ct-form-sub">Fill in your details and our team will be in touch to get you started.</p>
             <p className="ct-review-note">
-              <a href="/zephgain-review">Check the Zephgain review first</a> — how the platform works, what it
+              <a href="/zephgain-review">Check the Zephgain review first</a> - how the platform works, what it
               costs, and what to watch for.
             </p>
 
@@ -142,7 +142,7 @@ export default function Contact() {
       <CtaBanner
         eyebrow="Explore trading opportunities"
         title="Register now and our team will be in touch"
-        text="Open your Zephgain account in minutes and put automated AI trading to work — with support available 24/7."
+        text="Open your Zephgain account in minutes and put automated AI trading to work - with support available 24/7."
         cta="Register Now"
       />
     </>

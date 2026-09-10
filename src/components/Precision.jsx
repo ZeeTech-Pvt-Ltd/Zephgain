@@ -7,7 +7,7 @@ export default function Precision() {
       <div className="container">
         <div className="section-head reveal">
           <span className="eyebrow">Standout technology</span>
-          <h2 className="h2">Precision, Speed, and <mark>Security</mark> — All in One System</h2>
+          <h2 className="h2">Precision, Speed, and <mark>Security</mark> - All in One System</h2>
           <p className="lead">The details that set Zephgain apart.</p>
         </div>
 

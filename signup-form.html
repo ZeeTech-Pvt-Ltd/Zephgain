@@ -132,7 +132,7 @@
   .iti__flag + .iti__selected-dial-code { margin-left: 4px; }
   .iti__arrow { border-top-color: #f5f6fa; }
 
-  /* Country dropdown — search box (intl-tel-input v17 me built-in search nahi hai) */
+  /* Country dropdown - search box (intl-tel-input v17 me built-in search nahi hai) */
   .iti__search { padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .iti__search input {
     width: 100%; height: 34px; padding: 0 10px;
@@ -170,7 +170,7 @@
         <input type="email" id="email" placeholder="you@example.com" />
       </div>
 
-      <!-- Phone Number — country code dropdown + flag, number input ke andar -->
+      <!-- Phone Number - country code dropdown + flag, number input ke andar -->
       <div class="field">
         <label>Phone Number</label>
         <input type="tel" id="phone" placeholder="301 2345678" />
@@ -190,14 +190,14 @@
     const msg = document.getElementById('msg');
     const btn = document.getElementById('submitBtn');
 
-    // intl-tel-input — pehle PK set karo (form turant kaam kare), phir IP lookup
+    // intl-tel-input - pehle PK set karo (form turant kaam kare), phir IP lookup
     // country upgrade kare agar detect ho jaye. Race condition se bachne ke liye.
     const iti = window.intlTelInput(phoneInput, {
       initialCountry: 'pk',
       separateDialCode: true, // dial code input ke left side alag dikhega
     });
 
-    // Input ke andar sample phone number (ghost/placeholder) — country badlne par update hota hai
+    // Input ke andar sample phone number (ghost/placeholder) - country badlne par update hota hai
     const phoneSamples = {
       pk: '301 2345678',
       in: '98765 43210',
@@ -296,9 +296,9 @@
         return;
       }
 
-      show('✓ Form ready — checking values...', 'success');
+      show('✓ Form ready - checking values...', 'success');
 
-      // Yahi par apna backend/endpoint lagaoge — abhi sirf console.log
+      // Yahi par apna backend/endpoint lagaoge - abhi sirf console.log
       console.log({
         firstName,
         lastName,

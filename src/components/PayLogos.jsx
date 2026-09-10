@@ -1,4 +1,4 @@
-// Payment brand marks — lightweight inline SVGs (no external requests)
+// Payment brand marks - lightweight inline SVGs (no external requests)
 export function Visa({ w = 38, h = 11 }) {
   return (
     <svg width={w} height={h} viewBox="0 0 38 11" fill="none">

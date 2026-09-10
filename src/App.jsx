@@ -7,8 +7,8 @@ import { renderRoute } from './renderRoute.jsx'
 const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you', 'zephgain-review']
 
 // Pages that were removed (each was a thin single-section page duplicating a
-// homepage section). Any stale link — a bookmark, an old search result, or an
-// older URL — now resolves to the homepage.
+// homepage section). Any stale link - a bookmark, an old search result, or an
+// older URL - now resolves to the homepage.
 const REMOVED_PAGES = { '/how-it-works': '/', '/why-invest': '/' }
 
 // Legacy case-variant paths redirect to their canonical form. The old
@@ -61,7 +61,7 @@ export default function App() {
 
   // SPA link handling: "/about"-style links navigate without a page reload;
   // section anchors (#register, #how…) scroll on the current page but keep the
-  // URL clean — no "#" fragment appears. On route pages they go home first,
+  // URL clean - no "#" fragment appears. On route pages they go home first,
   // since those sections only exist on home.
   useEffect(() => {
     const onClick = (e) => {
@@ -70,7 +70,7 @@ export default function App() {
       const href = a.getAttribute('href')
       if (!href) return
 
-      // Placeholder links (footer socials) — keep URL clean, do nothing.
+      // Placeholder links (footer socials) - keep URL clean, do nothing.
       if (href === '#') {
         e.preventDefault()
         return
@@ -118,7 +118,7 @@ export default function App() {
         const target = REMOVED_PAGES[cleanHref] || href
         const next = getRoute(target)
         if (next === route) {
-          // Same page — just scroll to top, no reload.
+          // Same page - just scroll to top, no reload.
           e.preventDefault()
           window.scrollTo(0, 0)
           return

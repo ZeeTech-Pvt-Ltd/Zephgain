@@ -45,7 +45,7 @@ const OUTPUT = {
   404: '404.html',
 }
 
-// Build the per-route <title>/meta/canonical/OG/Twitter block — mirrors
+// Build the per-route <title>/meta/canonical/OG/Twitter block - mirrors
 // Seo.jsx field-for-field (og:url falls back to SITE + '/', e.g. the 404).
 function headMeta(conf) {
   const L = []
@@ -114,7 +114,7 @@ ${style}
 }
 
 function log(step, msg) {
-  console.log(`[build] ${step} — ${msg}`)
+  console.log(`[build] ${step} - ${msg}`)
 }
 
 // ---------------- 1) client build ----------------

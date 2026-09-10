@@ -12,7 +12,7 @@ const tree = (
 
 // The build-time prerender ships the full page already inside #root, so
 // hydrate React onto that existing markup (no blank-then-paint flash, no
-// double render of the prerendered text). In dev — or when #root is empty —
+// double render of the prerendered text). In dev - or when #root is empty -
 // fall back to a normal client render.
 if (el.hasChildNodes()) hydrateRoot(el, tree)
 else createRoot(el).render(tree)

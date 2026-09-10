@@ -24,7 +24,7 @@ import ZephgainReview from './components/ZephgainReview.jsx'
 import NotFound from './components/NotFound.jsx'
 import ThankYou from './components/ThankYou.jsx'
 
-// Shared page shell — SEO head metadata, header, main, footer.
+// Shared page shell - SEO head metadata, header, main, footer.
 const Layout = ({ routeName, children }) => (
   <>
     <Seo route={routeName} />

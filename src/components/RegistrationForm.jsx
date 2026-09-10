@@ -6,7 +6,7 @@ import { countries } from '../data/countries.js'
 import { submitLead } from '../lib/submitLead.js'
 import { navigateTo } from '../lib/navigate.js'
 
-// Validation rules — kept identical to the reference site
+// Validation rules - kept identical to the reference site
 const nameRe = /^(?!.*(?:tg|telegram|traffic|bot))[^@\d]{2,20}$/i
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 

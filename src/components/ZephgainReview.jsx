@@ -1,4 +1,4 @@
-// Zephgain Review — long-form review page at /zephgain-review.
+// Zephgain Review - long-form review page at /zephgain-review.
 // Copy is published by the Zephgain team on the official site and is kept
 // factual on purpose (the page states it is not an independent rating).
 // FAQ text is single-sourced from reviewFaq in content.js so the rendered
@@ -37,7 +37,7 @@ const goodFit = [
 ]
 
 const notGoodFit = [
-  'Are looking for guaranteed or fixed returns — no trading platform can offer these',
+  'Are looking for guaranteed or fixed returns - no trading platform can offer these',
   'Want a licensed adviser to manage your money and answer to you personally',
   'Are trading with money you need for rent, bills, or emergencies',
   'Live outside Australia, as access is currently limited to Australian residents',
@@ -121,7 +121,7 @@ export default function ZephgainReview() {
           <p className="lead">
             Before you put money into any trading platform, you should know exactly what you are signing up
             for. This Zephgain review is published by the Zephgain team on our official site,{' '}
-            <a href="/">zephgain-au.com</a>. It is not an independent rating — so we have kept it factual.
+            <a href="/">zephgain-au.com</a>. It is not an independent rating - so we have kept it factual.
             Everything below matches what the platform actually does today, including the parts that will not
             suit everyone.
           </p>
@@ -158,7 +158,7 @@ export default function ZephgainReview() {
               every call yourself.
             </p>
             <p>
-              The idea is to remove the two things that stop most people from trading — the jargon and the
+              The idea is to remove the two things that stop most people from trading - the jargon and the
               screen time. You do not need to read charts, and you do not need to sit at a desk. What you do
               need is a clear head about the risk, which we cover further down.
             </p>
@@ -170,7 +170,7 @@ export default function ZephgainReview() {
           </section>
 
           <section className="rv-sec reveal">
-            <h2>Getting Started — Three Steps</h2>
+            <h2>Getting Started - Three Steps</h2>
             <ol className="rv-steps">
               {stepsCopy.map((s) => (
                 <li key={s.label}>
@@ -189,7 +189,7 @@ export default function ZephgainReview() {
             <h2>Zephgain Minimum Deposit, Fees, and Withdrawals</h2>
             <p>
               There is no monthly subscription and no registration fee. The Zephgain minimum deposit of AU$250
-              is what activates the account, and that money is yours to trade with — it is not a joining fee.
+              is what activates the account, and that money is yours to trade with - it is not a joining fee.
             </p>
             <p>
               A Zephgain withdrawal goes back through the same channel you used to deposit. If you funded by
@@ -244,7 +244,7 @@ export default function ZephgainReview() {
           </section>
 
           <section className="rv-sec reveal">
-            <h2>Who Zephgain Suits — and Who It Does Not</h2>
+            <h2>Who Zephgain Suits - and Who It Does Not</h2>
             <div className="rv-fit">
               <div className="rv-fit-card good">
                 <h3>A good fit if you:</h3>
@@ -271,7 +271,7 @@ export default function ZephgainReview() {
             <p>
               Trading carries real risk of loss, including the loss of your entire deposit. Prices in crypto,
               forex, and commodities can move sharply and without warning, including outside normal hours. AI
-              models are built on historical and live data — they can be wrong, and they do not predict the
+              models are built on historical and live data - they can be wrong, and they do not predict the
               future. Past performance, whether real or simulated, tells you nothing reliable about what comes
               next.
             </p>
@@ -283,7 +283,7 @@ export default function ZephgainReview() {
           </section>
 
           <section className="rv-sec reveal">
-            <h2>Zephgain Review — The Short Version</h2>
+            <h2>Zephgain Review - The Short Version</h2>
             <p>
               Zephgain gives Australian traders a straightforward way into automated trading: AU$250 to start,
               no subscription, automated or manual control, withdrawals typically inside 24 hours, and a

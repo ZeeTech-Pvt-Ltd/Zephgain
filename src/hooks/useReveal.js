@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 
 /**
- * useReveal — scroll-reveal animations.
+ * useReveal - scroll-reveal animations.
  *
  * Observes every element with the `.reveal` class and sets a `data-revealed`
  * attribute when it scrolls into view (threshold 12%). The attribute is used
  * instead of a class so that React re-renders (which rewrite the `className`
- * attribute) never wipe out the revealed state — a class toggled imperatively
+ * attribute) never wipe out the revealed state - a class toggled imperatively
  * on a React-managed element gets clobbered, which made FAQ items disappear.
  *
  * A MutationObserver watches the DOM so elements that mount *after* the hook
@@ -43,7 +43,7 @@ export default function useReveal(dep) {
 
     document.querySelectorAll('.reveal').forEach(observe)
 
-    // Reveal elements that appear later — e.g. lazy-loaded route pages.
+    // Reveal elements that appear later - e.g. lazy-loaded route pages.
     const mo = new MutationObserver((records) => {
       for (const rec of records) {
         for (const node of rec.addedNodes) {

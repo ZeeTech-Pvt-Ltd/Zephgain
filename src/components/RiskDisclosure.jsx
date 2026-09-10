@@ -1,4 +1,4 @@
-// Risk Disclosure — layout follows the gemwealth-holm reference; all copy is
+// Risk Disclosure - layout follows the gemwealth-holm reference; all copy is
 // rewritten for Zephgain in its own words. Brand colors/fonts unchanged.
 // Reuses the shared legal-page styles (.terms-*) from index.css.
 const sections = [
@@ -20,7 +20,7 @@ const sections = [
     n: '03',
     t: 'No Investment Advice',
     p: [
-      'Zephgain provides technology and information tools. Nothing on the platform — including AI-generated analysis, signals, or other content — constitutes personalised investment advice, a recommendation, or a solicitation to trade. All content is provided for informational purposes only.',
+      'Zephgain provides technology and information tools. Nothing on the platform - including AI-generated analysis, signals, or other content - constitutes personalised investment advice, a recommendation, or a solicitation to trade. All content is provided for informational purposes only.',
     ],
   },
   {

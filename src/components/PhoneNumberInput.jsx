@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { countries } from '../data/countries.js'
 
-// ISO code -> real flag image (flagcdn.com) — same 20×15 flags as the reference.
-// (Emoji flags don't render on Windows — they show as letters like "AU".)
+// ISO code -> real flag image (flagcdn.com) - same 20×15 flags as the reference.
+// (Emoji flags don't render on Windows - they show as letters like "AU".)
 const flagSrc = (code) => `https://flagcdn.com/w20/${code.toLowerCase()}.png`
 
 // Pinned to the top of the list with a divider, like intl-tel-input's preferred countries
 const preferredCodes = ['US', 'GB']
 
 /**
- * PhoneNumberInput — ONE combined input field: [ 🇵🇰 +92 | number ]
+ * PhoneNumberInput - ONE combined input field: [ 🇵🇰 +92 | number ]
  * Country selector (flag + calling code) on the left with a vertical divider,
  * phone number input on the right. Clicking the selector opens a searchable
  * country list; selecting a country updates the flag + calling code.
@@ -52,7 +52,7 @@ export default function PhoneNumberInput({
     )
   }, [q])
 
-  // Preferred countries pinned on top (in declared order) — hidden while searching
+  // Preferred countries pinned on top (in declared order) - hidden while searching
   const preferred = useMemo(
     () => (q.trim() ? [] : preferredCodes.map((code) => countries.find((c) => c[0] === code)).filter(Boolean)),
     [q],
