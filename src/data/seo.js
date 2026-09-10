@@ -118,7 +118,7 @@ function buildFaqPage(items) {
   }
 }
 
-// Homepage FAQ schema - mirrors the <Faq/> accordion on the home route.
+// FAQ schema - mirrors the FAQ accordion on the /faq route.
 function faqPageSchema() {
   return buildFaqPage(faq)
 }
@@ -141,7 +141,7 @@ export const seo = {
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
     ogImageAlt: 'Zephgain - AI-powered automated trading platform for Australia',
-    schema: [organization, website, webPage('Zephgain - AI-Powered Automated Trading Platform in Australia', `${SITE}/`, homeDescription), faqPageSchema(), serviceSchema()],
+    schema: [organization, website, webPage('Zephgain - AI-Powered Automated Trading Platform in Australia', `${SITE}/`, homeDescription), serviceSchema()],
   },
 
   about: {
@@ -188,6 +188,23 @@ export const seo = {
       webPage('Zephgain Review', `${SITE}/zephgain-review`, 'An official Zephgain review for Australian traders - how the platform works, the AU$250 minimum deposit, withdrawal times, security, and the risks involved.'),
       breadcrumb('Zephgain Review', '/zephgain-review'),
       reviewFaqPageSchema(),
+    ],
+  },
+
+  faq: {
+    title: 'FAQ - Zephgain Automated Trading Platform',
+    description:
+      'Answers to the most common questions about Zephgain - how the platform works, the AU$250 minimum deposit, security, withdrawals, and how to spot fake Zephgain apps.',
+    keywords:
+      'Zephgain FAQ, Zephgain help, automated trading questions, is Zephgain legit, Zephgain minimum deposit, Zephgain withdrawal',
+    canonical: `${SITE}/faq`,
+    robots: 'index, follow, max-image-preview:large, max-snippet:-1',
+    type: 'website',
+    ogImageAlt: 'Zephgain FAQ - frequently asked questions about the automated trading platform',
+    schema: [
+      webPage('FAQ', `${SITE}/faq`, 'Answers to the most common questions about the Zephgain automated trading platform - deposits, security, withdrawals, and account safety.'),
+      breadcrumb('FAQ', '/faq'),
+      faqPageSchema(),
     ],
   },
 

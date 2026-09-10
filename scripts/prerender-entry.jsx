@@ -16,6 +16,7 @@ const ROUTES = [
   'disclosure',
   'thank-you',
   'zephgain-review',
+  'faq',
   '404',
 ]
 

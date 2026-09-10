@@ -6,12 +6,12 @@ import { nav } from '../data/content.js'
 export default function Header({ route = 'home' }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const ids = useMemo(() => ['top', 'how', 'experience', 'priorities', 'faq', 'portfolio'], [])
+  const ids = useMemo(() => ['top', 'how', 'experience', 'priorities', 'portfolio'], [])
   const active = useScrollSpy(ids)
 
   // Route links (/about, /contact…) are active on their own page; home
-  // sections (Home -> top, FAQ -> #faq, …) are active via scroll-spy on the
-  // home page. Links that scroll use the data-scroll target for the check.
+  // sections (Home -> top, …) are active via scroll-spy on the home page.
+  // Links that scroll use the data-scroll target for the check.
   const isActive = (item) => {
     if (item.scroll) return route === 'home' && active === item.scroll.slice(1)
     if (item.href === '/') return route === 'home' && active === 'top'

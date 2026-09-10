@@ -6,7 +6,7 @@ export const nav = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Review', href: '/zephgain-review' },
-  { label: 'FAQ', href: '/', scroll: '#faq' },
+  { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -294,7 +294,7 @@ export const footer = {
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
     { label: 'Review', href: '/zephgain-review' },
-    { label: 'FAQ', href: '/', scroll: '#faq' },
+    { label: 'FAQ', href: '/faq' },
     { label: 'Contact Us', href: '/contact' },
   ],
   legal: [

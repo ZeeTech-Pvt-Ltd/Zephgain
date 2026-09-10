@@ -11,9 +11,9 @@ import Precision from './components/Precision.jsx'
 import CtaBanner from './components/CtaBanner.jsx'
 import Testimonials from './components/Testimonials.jsx'
 import Portfolio from './components/Portfolio.jsx'
-import Faq from './components/Faq.jsx'
 import Capabilities from './components/Capabilities.jsx'
 import FinalCta from './components/FinalCta.jsx'
+import FaqPage from './components/FaqPage.jsx'
 import Footer from './components/Footer.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
@@ -46,6 +46,7 @@ export function renderRoute(route) {
   if (route === 'disclosure') return <Layout routeName="disclosure"><RiskDisclosure /></Layout>
   if (route === 'thank-you') return <Layout routeName="thank-you"><ThankYou /></Layout>
   if (route === 'zephgain-review') return <Layout routeName="zephgain-review"><ZephgainReview /></Layout>
+  if (route === 'faq') return <Layout routeName="faq"><FaqPage /></Layout>
   if (route === '404') return <Layout routeName="404"><NotFound /></Layout>
 
   return (
@@ -68,10 +69,8 @@ export function renderRoute(route) {
 
       <Testimonials />
       <Portfolio />
-      {/* Spec table first, then FAQ last so the final doubt-handling flows
-          straight into the final sign-up CTA (no dry table in between). */}
+      {/* Spec table flows straight into the final sign-up CTA. */}
       <Capabilities />
-      <Faq />
       <FinalCta />
     </Layout>
   )

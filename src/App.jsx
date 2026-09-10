@@ -4,7 +4,7 @@ import { renderRoute } from './renderRoute.jsx'
 
 // Clean-path routing: "/" -> home, "/about" -> About, anything unknown -> 404.
 // Fragment anchors like "#register" keep working as in-page scroll links.
-const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you', 'zephgain-review']
+const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you', 'zephgain-review', 'faq']
 
 // Pages that were removed (each was a thin single-section page duplicating a
 // homepage section). Any stale link - a bookmark, an old search result, or an
