@@ -226,6 +226,10 @@ export const faq = [
     a: 'A minimum deposit of AU$250 activates your trading account - with no subscription fees, hidden charges, or registration costs. Start small and grow at a pace that suits you.',
   },
   {
+    q: 'Is There a Zephgain App?',
+    a: 'There is no Zephgain mobile app. The platform runs in your browser on any device. Here is how to access it safely and how to spot fake Zephgain apps.',
+  },
+  {
     q: 'How Secure Are My Money and Data on Zephgain?',
     a: 'Security runs through every layer of the platform. Your personal data is shielded by internationally recognised encryption, two-factor authentication, and cold storage for 95% of client funds.',
   },
