@@ -133,16 +133,26 @@ export default function ZephgainApp() {
       {/* How to Spot a Fake Zephgain App */}
       <section className="section">
         <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">Red flags</span>
-            <h2 className="h2">How to Spot a <mark>Fake Zephgain App</mark></h2>
-            <p className="lead">
-              Our only official Australian address is zephgain-au.com. Treat anything else as unrelated to us.
-            </p>
-          </div>
-
-          <div className="zapp-spot reveal">
-            <div className="zapp-spot-media">
+          <div className="zapp-split reveal">
+            <div className="zapp-split-content">
+              <span className="eyebrow">Red flags</span>
+              <h2 className="h2">How to Spot a <mark>Fake Zephgain App</mark></h2>
+              <p className="lead">
+                Our only official Australian address is zephgain-au.com. Treat anything else as unrelated to us.
+              </p>
+              <div className="warn-timeline">
+                {warnings.map((w, i) => (
+                  <div className="warn-item" key={w.text}>
+                    <span className="warn-num">{String(i + 1).padStart(2, '0')}</span>
+                    <p>{w.text}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="zapp-note">
+                If you have already installed something claiming to be a Zephgain app, uninstall it, change the password on any account whose details you entered, and contact your bank if you shared payment information. You can also report it to Scamwatch.
+              </p>
+            </div>
+            <div className="zapp-split-media">
               <img
                 src="/spot-fake-app.png"
                 alt="How to spot a fake Zephgain app on your phone"
@@ -151,24 +161,7 @@ export default function ZephgainApp() {
                 loading="lazy"
               />
             </div>
-            <div className="warn-panel">
-              <div className="warn-panel-head">
-                Warning signs
-              </div>
-              <ol className="warn-list">
-                {warnings.map((w, i) => (
-                  <li key={w.text}>
-                    <span className="warn-num">{String(i + 1).padStart(2, '0')}</span>
-                    <p>{w.text}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
           </div>
-
-          <p className="zapp-note reveal">
-            If you have already installed something claiming to be a Zephgain app, uninstall it, change the password on any account whose details you entered, and contact your bank if you shared payment information. You can also report it to Scamwatch.
-          </p>
         </div>
       </section>
 

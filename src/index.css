@@ -1017,7 +1017,7 @@ html.js .reveal[data-revealed] { opacity: 1; transform: none; }
 @media (max-width: 640px) {
   .section { padding: 56px 0; }
   .zapp-why { grid-template-columns: 1fr; gap: 32px; }
-  .zapp-spot { grid-template-columns: 1fr; gap: 32px; }
+  .zapp-split { grid-template-columns: 1fr; gap: 32px; }
   .metrics-grid, .steps, .prio-grid, .feat-grid, .tst-grid, .caps-grid { grid-template-columns: 1fr; }
   .how-strip { grid-template-columns: 1fr; }
   .chip b, .chip span { font-size: 10px; letter-spacing: .05em; }
@@ -1115,17 +1115,21 @@ html.js .reveal[data-revealed] { opacity: 1; transform: none; }
   pointer-events: none;
 }
 .zapp-hero .container { position: relative; z-index: 1; }
-.zapp-spot { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: center; }
-.zapp-spot-media img { width: 100%; height: auto; border-radius: var(--r-lg); border: 1px solid var(--line); box-shadow: var(--shadow-lg); }
-.zapp-spot .warn-panel { max-width: none; margin: 0; }
+.zapp-split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+.zapp-split-content { display: grid; gap: 20px; }
+.zapp-split-content .eyebrow { justify-self: start; }
+.zapp-split-content .warn-timeline { margin: 4px 0 0; max-width: none; }
+.zapp-split-content .zapp-note { max-width: none; margin: 20px 0 0; text-align: left; }
+.zapp-split-media img { width: 100%; max-width: 440px; height: auto; margin-inline: auto; }
+.warn-timeline { position: relative; max-width: 720px; margin: 8px auto 0; }
+.warn-timeline::before { content: ''; position: absolute; left: 22px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(180deg, rgba(192, 57, 43, .4), rgba(192, 57, 43, .06)); }
+.warn-item { position: relative; padding: 0 0 28px 60px; }
+.warn-item:last-child { padding-bottom: 0; }
+.warn-num { position: absolute; left: 0; top: 0; width: 46px; height: 46px; background: linear-gradient(135deg, #C0392B, #922B21); color: #fff; font-size: 15px; font-weight: 800; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 4px 14px -4px rgba(192, 57, 43, .5); border: 2px solid #fff; }
+.warn-item p { color: #33404F; font-size: 15.5px; line-height: 1.7; padding-top: 9px; }
 .zapp-faq { max-width: none; margin-inline: 0; }
 .zapp-note { max-width: 720px; margin: 40px auto 0; text-align: center; color: var(--muted); font-size: 15px; line-height: 1.7; }
-.warn-panel { max-width: 820px; margin-inline: auto; }
-.warn-panel-head { font-weight: 800; color: #C0392B; font-size: 15px; margin-bottom: 18px; }
-.warn-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-.warn-list li { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: flex-start; }
-.warn-list .warn-num { font-size: 14px; font-weight: 800; color: #C0392B; opacity: .6; letter-spacing: .05em; padding-top: 2px; min-width: 24px; }
-.warn-list p { color: #33404F; font-size: 15px; line-height: 1.65; }
+.warn-card p { color: var(--muted); font-size: 14.5px; line-height: 1.65; }
 
 /* Who Zephgain suits - two cards */
 .rv-fit { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 20px 0 2px; }
