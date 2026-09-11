@@ -58,7 +58,7 @@ export default function ZephgainApp() {
 
           <div className="about-visual reveal">
             <img
-              src="/Zephgainsecuirty.png"
+              src="/Zephgainsecuirty.webp"
               alt="Zephgain security - browser-based platform with nothing to install"
               width="1317"
               height="1194"
@@ -109,7 +109,7 @@ export default function ZephgainApp() {
           <div className="zapp-why reveal">
             <div className="zapp-why-media">
               <img
-                src="/mobileapp.png"
+                src="/mobileapp.webp"
                 alt="Why Zephgain has no mobile app - one browser address to secure"
                 width="1254"
                 height="1254"
@@ -154,7 +154,7 @@ export default function ZephgainApp() {
             </div>
             <div className="zapp-split-media">
               <img
-                src="/spot-fake-app.png"
+                src="/spot-fake-app.webp"
                 alt="How to spot a fake Zephgain app on your phone"
                 width="1305"
                 height="1206"
