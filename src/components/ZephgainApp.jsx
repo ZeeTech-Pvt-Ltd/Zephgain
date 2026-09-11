@@ -38,7 +38,7 @@ export default function ZephgainApp() {
   return (
     <>
       {/* Hero */}
-      <section className="about-hero">
+      <section className="about-hero zapp-hero">
         <div className="container about-hero-inner">
           <div className="about-hero-copy reveal">
             <span className="eyebrow">Security</span>
@@ -104,19 +104,28 @@ export default function ZephgainApp() {
       </section>
 
       {/* Why We Do Not Have a Mobile App */}
-      <section className="section">
+      <section className="section zapp-why-sec">
         <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">One address to secure</span>
-            <h2 className="h2">Why We Do Not Have a <mark>Mobile App</mark></h2>
-          </div>
-          <div className="zapp-prose reveal">
-            <p>
-              Trading platforms are a common target for fake apps. Because a browser-based platform gives us one address to secure and one place for you to verify, there is no installer for anyone to imitate, no APK for anyone to tamper with, and no app-store listing for a copycat to sit beside.
-            </p>
-            <p>
-              If that changes, we will announce it here first, and any official app will be linked from this page and from the Apple App Store or Google Play never from a direct download link.
-            </p>
+          <div className="zapp-why reveal">
+            <div className="zapp-why-media">
+              <img
+                src="/mobileapp.png"
+                alt="Why Zephgain has no mobile app - one browser address to secure"
+                width="1254"
+                height="1254"
+                loading="lazy"
+              />
+            </div>
+            <div className="zapp-why-copy">
+              <span className="eyebrow">One address to secure</span>
+              <h2 className="h2">Why We Do Not Have a <mark>Mobile App</mark></h2>
+              <p>
+                Trading platforms are a common target for fake apps. Because a browser-based platform gives us one address to secure and one place for you to verify, there is no installer for anyone to imitate, no APK for anyone to tamper with, and no app-store listing for a copycat to sit beside.
+              </p>
+              <p>
+                If that changes, we will announce it here first, and any official app will be linked from this page and from the Apple App Store or Google Play never from a direct download link.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -132,13 +141,29 @@ export default function ZephgainApp() {
             </p>
           </div>
 
-          <div className="warn-grid">
-            {warnings.map((w) => (
-              <div className="warn-card reveal" key={w.text}>
-                <span className="warn-ico"><Icon name={w.icon} size={20} /></span>
-                <p>{w.text}</p>
+          <div className="zapp-spot reveal">
+            <div className="zapp-spot-media">
+              <img
+                src="/spot-fake-app.png"
+                alt="How to spot a fake Zephgain app on your phone"
+                width="1305"
+                height="1206"
+                loading="lazy"
+              />
+            </div>
+            <div className="warn-panel">
+              <div className="warn-panel-head">
+                Warning signs
               </div>
-            ))}
+              <ol className="warn-list">
+                {warnings.map((w, i) => (
+                  <li key={w.text}>
+                    <span className="warn-num">{String(i + 1).padStart(2, '0')}</span>
+                    <p>{w.text}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
 
           <p className="zapp-note reveal">
@@ -154,7 +179,7 @@ export default function ZephgainApp() {
             <span className="eyebrow">Help Centre</span>
             <h2 className="h2">Frequently Asked <mark>Questions</mark></h2>
           </div>
-          <div className="faq">
+          <div className="faq zapp-faq">
             {zephgainAppFaq.map((item, i) => (
               <div className={`faq-item ${openIndex === i ? 'open' : ''} reveal`} key={item.q}>
                 <button
