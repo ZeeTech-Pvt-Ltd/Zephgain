@@ -12,6 +12,7 @@
     { "source": "/disclosure", "destination": "/disclosure/index.html" },
     { "source": "/thank-you", "destination": "/thank-you/index.html" },
     { "source": "/zephgain-review", "destination": "/zephgain-review/index.html" },
-    { "source": "/faq", "destination": "/faq/index.html" }
+    { "source": "/faq", "destination": "/faq/index.html" },
+    { "source": "/zephgain-app", "destination": "/zephgain-app/index.html" }
   ]
 }

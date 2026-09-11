@@ -43,6 +43,7 @@ const OUTPUT = {
   'thank-you': 'thank-you/index.html',
   'zephgain-review': 'zephgain-review/index.html',
   faq: 'faq/index.html',
+  'zephgain-app': 'zephgain-app/index.html',
   404: '404.html',
 }
 

@@ -7,6 +7,7 @@ export const nav = [
   { label: 'About Us', href: '/about' },
   { label: 'Review', href: '/zephgain-review' },
   { label: 'FAQ', href: '/faq' },
+  { label: 'Zephgain App', href: '/zephgain-app' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -228,6 +229,7 @@ export const faq = [
   {
     q: 'Is There a Zephgain App?',
     a: 'There is no Zephgain mobile app. The platform runs in your browser on any device. Here is how to access it safely and how to spot fake Zephgain apps.',
+    link: { text: 'Read the full answer', href: '/zephgain-app' },
   },
   {
     q: 'How Secure Are My Money and Data on Zephgain?',
@@ -277,6 +279,27 @@ export const reviewFaq = [
   },
 ]
 
+// FAQ shown on the /zephgain-app page. Single source of truth - the same Q&A
+// pairs feed both the rendered accordion and the FAQPage JSON-LD.
+export const zephgainAppFaq = [
+  {
+    q: 'Is there a Zephgain app on Google Play or the App Store?',
+    a: 'No. We have not published an app on any store. The platform runs in your browser.',
+  },
+  {
+    q: 'Can I trade on Zephgain from my phone?',
+    a: 'Yes. Open zephgain-au.com in your mobile browser and sign in - the full platform works there.',
+  },
+  {
+    q: 'Someone sent me a Zephgain APK. Is it safe?',
+    a: 'No. We do not distribute an APK. Do not install it.',
+  },
+  {
+    q: 'Will there be an official app later?',
+    a: 'If we release one, it will be announced on this page and available only through the official app stores.',
+  },
+]
+
 export const capabilities = [
   { k: 'Platform Technology', v: 'AI-Powered Trading Technology' },
   { k: 'Funding Methods', v: 'Credit Cards, Bank Transfers, PayPal' },
@@ -295,6 +318,7 @@ export const footer = {
     { label: 'About Us', href: '/about' },
     { label: 'Review', href: '/zephgain-review' },
     { label: 'FAQ', href: '/faq' },
+    { label: 'Zephgain App', href: '/zephgain-app' },
     { label: 'Contact Us', href: '/contact' },
   ],
   legal: [

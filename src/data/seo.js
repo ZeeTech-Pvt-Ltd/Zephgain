@@ -5,7 +5,7 @@
 // cards, and JSON-LD structured data - consumed by <Seo/>.
 // Nothing here invents facts: all claims come from content.js.
 // =========================================================
-import { faq, reviewFaq } from './content.js'
+import { faq, reviewFaq, zephgainAppFaq } from './content.js'
 
 const SITE = 'https://zephgain-au.com'
 export const OG_IMAGE = `${SITE}/og-image.png`
@@ -128,6 +128,11 @@ function reviewFaqPageSchema() {
   return buildFaqPage(reviewFaq)
 }
 
+// /zephgain-app FAQ schema - mirrors the page's own accordion.
+function zephgainAppFaqPageSchema() {
+  return buildFaqPage(zephgainAppFaq)
+}
+
 const homeDescription =
   'Zephgain - AI-powered automated trading platform for Australia. 24/7 automated strategies, live signals, bank-grade security. Start with just AU$250.'
 
@@ -205,6 +210,23 @@ export const seo = {
       webPage('FAQ', `${SITE}/faq`, 'Answers to the most common questions about the Zephgain automated trading platform - deposits, security, withdrawals, and account safety.'),
       breadcrumb('FAQ', '/faq'),
       faqPageSchema(),
+    ],
+  },
+
+  'zephgain-app': {
+    title: 'Is There a Zephgain App? - No, Zephgain Runs in Your Browser',
+    description:
+      'There is no Zephgain mobile app. Zephgain runs in your web browser - learn how to use it on your phone and how to spot fake Zephgain apps, APK files, and scam sites.',
+    keywords:
+      'Zephgain app, Zephgain mobile app, fake Zephgain app, Zephgain APK, is there a Zephgain app, Zephgain app store',
+    canonical: `${SITE}/zephgain-app`,
+    robots: 'index, follow, max-image-preview:large, max-snippet:-1',
+    type: 'website',
+    ogImageAlt: 'Is there a Zephgain app? - no, Zephgain runs in your browser',
+    schema: [
+      webPage('Is There a Zephgain App?', `${SITE}/zephgain-app`, 'There is no Zephgain mobile app - learn how to use Zephgain in your browser and how to spot fake Zephgain apps.'),
+      breadcrumb('Zephgain App', '/zephgain-app'),
+      zephgainAppFaqPageSchema(),
     ],
   },
 

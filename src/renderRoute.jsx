@@ -21,6 +21,7 @@ import Terms from './components/Terms.jsx'
 import Privacy from './components/Privacy.jsx'
 import RiskDisclosure from './components/RiskDisclosure.jsx'
 import ZephgainReview from './components/ZephgainReview.jsx'
+import ZephgainApp from './components/ZephgainApp.jsx'
 import NotFound from './components/NotFound.jsx'
 import ThankYou from './components/ThankYou.jsx'
 
@@ -47,6 +48,7 @@ export function renderRoute(route) {
   if (route === 'thank-you') return <Layout routeName="thank-you"><ThankYou /></Layout>
   if (route === 'zephgain-review') return <Layout routeName="zephgain-review"><ZephgainReview /></Layout>
   if (route === 'faq') return <Layout routeName="faq"><FaqPage /></Layout>
+  if (route === 'zephgain-app') return <Layout routeName="zephgain-app"><ZephgainApp /></Layout>
   if (route === '404') return <Layout routeName="404"><NotFound /></Layout>
 
   return (
